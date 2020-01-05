@@ -1,2 +1,2 @@
 # seniorProject62
-hand translator app
+hand translator application by Nuttakan Samerchuer   id : 13580200
