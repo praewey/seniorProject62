@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="scJ-zC-rZT">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mitr-ExtraLight.ttf">
+            <string>Mitr-ExtraLight</string>
+        </array>
+        <array key="Mitr-Light.ttf">
+            <string>Mitr-Light</string>
+        </array>
+        <array key="Mitr-Regular.ttf">
+            <string>Mitr-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Signin View Controller-->
+        <scene sceneID="muK-at-7IV">
+            <objects>
+                <viewController storyboardIdentifier="SigninViewController" id="scJ-zC-rZT" customClass="SigninViewController" customModule="seniorProject62" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ioX-Km-oGa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ลงชื่อเข้าใช้งาน!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-1t-CE9">
+                                <rect key="frame" x="20" y="198" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mitr-Regular" family="Mitr" pointSize="30"/>
+                                <color key="textColor" red="0.029467234389999999" green="0.23790857200000001" blue="0.55297136309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="กรุณาลงชื่อก่อนเข้าใช้งาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mf5-Qq-D4c">
+                                <rect key="frame" x="20" y="235" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mitr-ExtraLight" family="Mitr" pointSize="20"/>
+                                <color key="textColor" red="0.051304683089999997" green="0.29953911900000002" blue="0.71768623590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="อีเมล" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-yM-Hhg">
+                                <rect key="frame" x="20" y="320" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="รหัสผ่าน" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XtT-nI-uft">
+                                <rect key="frame" x="20" y="379" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agI-Z8-VfI">
+                                <rect key="frame" x="94" y="451" width="227" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.031795624639999999" green="0.22798278929999999" blue="0.57258105280000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Regular" family="Mitr" pointSize="20"/>
+                                <state key="normal" title="เข้าสู่ระบบ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F5P-3H-swo" kind="presentation" id="huR-VB-ugD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-fP-fsD">
+                                <rect key="frame" x="0.0" y="668" width="414" height="38"/>
+                                <fontDescription key="fontDescription" name="Mitr-Regular" family="Mitr" pointSize="16"/>
+                                <state key="normal" title="ยังไม่ได้เป็นสมาชิก">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Xhr-lZ-ROg" kind="presentation" id="eGg-Re-dmI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-8N-TZ7">
+                                <rect key="frame" x="111" y="517" width="196" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="15"/>
+                                <state key="normal" title="หรือลงชื่อเข้าใช้ด้วย Facebook"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Izh-HC-qP4" firstAttribute="trailing" secondItem="nWc-fP-fsD" secondAttribute="trailing" id="0Sm-SI-yf1"/>
+                            <constraint firstItem="nWc-fP-fsD" firstAttribute="leading" secondItem="Izh-HC-qP4" secondAttribute="leading" id="YCW-bO-edr"/>
+                            <constraint firstItem="Izh-HC-qP4" firstAttribute="bottom" secondItem="nWc-fP-fsD" secondAttribute="bottom" constant="30" id="epW-IE-yB9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Izh-HC-qP4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sHO-0i-yzb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bd-gd-Tzo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="-1983"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="cr3-aZ-x0A">
+            <objects>
+                <viewController id="Xhr-lZ-ROg" customClass="SignupViewController" customModule="seniorProject62" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHg-go-Xpi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="อีเมล" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-qF-g9o">
+                                <rect key="frame" x="20" y="223" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ชื่อผู้ใช้" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-SJ-eZd">
+                                <rect key="frame" x="20" y="278" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="เพศ" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqh-Z0-Gpm">
+                                <rect key="frame" x="20" y="385" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ระดับการได้ยิน" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCl-0a-9ge">
+                                <rect key="frame" x="20" y="437" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="รหัสผ่าน" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFd-sd-RAA">
+                                <rect key="frame" x="20" y="492" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="กรุณาใส่รหัสผ่านอีกครั้ง" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBU-Gx-YgG">
+                                <rect key="frame" x="20" y="542" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="วันเกิด" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-vM-BWG">
+                                <rect key="frame" x="18" y="333" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.65966975689999996" green="0.68870496749999999" blue="0.74902862309999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Mitr-Light" family="Mitr" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjP-X4-4S7">
+                                <rect key="frame" x="164" y="673" width="87" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mitr-Regular" family="Mitr" pointSize="14"/>
+                                <state key="normal" title="เป็นสมาชิกแล้ว">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss_onClick:" destination="Xhr-lZ-ROg" eventType="touchUpInside" id="Era-Vm-Nwn"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-1" translatesAutoresizingMaskIntoConstraints="NO" id="qZl-e3-SCb">
+                                <rect key="frame" x="147" y="58" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAB-NH-fzE">
+                                <rect key="frame" x="154" y="606" width="106" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mitr-Regular" family="Mitr" pointSize="20"/>
+                                <state key="normal" title="สมัครสมาชิก"/>
+                                <connections>
+                                    <action selector="signupPressed:" destination="Xhr-lZ-ROg" eventType="touchUpInside" id="9nd-fd-7cH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gsa-yX-IFS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O4z-iw-q6g"/>
+                    <connections>
+                        <outlet property="birthdayField" destination="HFe-vM-BWG" id="Wdp-go-kEI"/>
+                        <outlet property="confirmPassword" destination="FBU-Gx-YgG" id="1P0-Ig-jvq"/>
+                        <outlet property="deficiencyField" destination="bCl-0a-9ge" id="0rh-Sr-PME"/>
+                        <outlet property="emailField" destination="ANW-qF-g9o" id="9G1-Z1-x9L"/>
+                        <outlet property="genderField" destination="Qqh-Z0-Gpm" id="12N-DD-5iP"/>
+                        <outlet property="nameField" destination="bRN-SJ-eZd" id="0v7-mZ-Jou"/>
+                        <outlet property="password" destination="AFd-sd-RAA" id="GsL-tK-tUp"/>
+                        <outlet property="passwordField" destination="AFd-sd-RAA" id="Z9R-Ft-z2G"/>
+                        <outlet property="signupBtn" destination="rAB-NH-fzE" id="7EO-3j-G6H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xip-nS-zVo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="-1983"/>
+        </scene>
+        <!--UITabBarController-eMU-Ur-1n4-->
+        <scene sceneID="YdF-hy-puj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SigninViewController" storyboardName="Main" referencedIdentifier="UITabBarController-eMU-Ur-1n4" id="F5P-3H-swo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKG-jy-oWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="-1003"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="user-1" width="512" height="512"/>
+    </resources>
+</document>
