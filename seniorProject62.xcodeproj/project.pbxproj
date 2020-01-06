@@ -42,6 +42,7 @@
 		4FFE7C6823C1C59000C76FC0 /* ขอบคุณ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */; };
 		4FFE7C6923C1C59000C76FC0 /* ชื่อ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */; };
 		4FFE7C6A23C1C59000C76FC0 /* พบ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5F23C1C59000C76FC0 /* พบ.mov */; };
+		4FFE7C6D23C3698C00C76FC0 /* WordCut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */; };
 		7F2E2FA2976394A1873AF7E8 /* Pods_seniorProject62.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1341797BEB2BD054666159 /* Pods_seniorProject62.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณ.mov"; sourceTree = "<group>"; };
 		4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ชื่อ.mov"; sourceTree = "<group>"; };
 		4FFE7C5F23C1C59000C76FC0 /* พบ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "พบ.mov"; sourceTree = "<group>"; };
+		4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCut.swift; sourceTree = "<group>"; };
 		9C76333F220AA7520F0EFAD6 /* Pods-seniorProject62.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorProject62.release.xcconfig"; path = "Target Support Files/Pods-seniorProject62/Pods-seniorProject62.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		4FC4898823AC8B7000FEF240 = {
 			isa = PBXGroup;
 			children = (
+				4FFE7C6B23C3696600C76FC0 /* Model */,
 				4FC489DF23AD133100FEF240 /* Media */,
 				4FC489D223AD077200FEF240 /* Fonts */,
 				4FC4899323AC8B7000FEF240 /* seniorProject62 */,
@@ -177,6 +180,14 @@
 				4F715E5D23B71EDC00FE8CDE /* ขอบคุณมาก.mov */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		4FFE7C6B23C3696600C76FC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		51B251C9ED595670F5E51FE9 /* Frameworks */ = {
@@ -332,6 +343,7 @@
 			files = (
 				4FC489C223ACE8B900FEF240 /* WelcomeViewController.swift in Sources */,
 				4FC4899923AC8B7000FEF240 /* ViewController.swift in Sources */,
+				4FFE7C6D23C3698C00C76FC0 /* WordCut.swift in Sources */,
 				4FC489B223AC980700FEF240 /* SpeechViewController.swift in Sources */,
 				4FC489BE23ACB64F00FEF240 /* SignupViewController.swift in Sources */,
 				4FC489AE23AC97A200FEF240 /* SigninViewController.swift in Sources */,
