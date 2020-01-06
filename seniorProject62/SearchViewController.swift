@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Speech
 import Firebase
+import Alamofire
 
 class SearchViewController: UIViewController,UISearchBarDelegate {
     
@@ -123,6 +124,19 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     }
     
     func searchText(text: String) {
+        let url = "http://ec2-3-17-128-156.us-east-2.compute.amazonaws.com:5000/cut?word=\(text)"
+        let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        Alamofire.request(encodedUrl!).response { response in
+            let decoder = JSONDecoder()
+            do {
+                let data = try decoder.decode(WordCut.self, from: response.data!)
+                self.speechTextField.text = data.cut.joined(separator: " ")
+            } catch {
+                print(error)
+            }
+        }
+        
         db.collection("words").getDocuments { query, error in
             if let error = error {
                 print(error)
