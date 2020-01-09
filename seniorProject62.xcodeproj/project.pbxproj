@@ -43,6 +43,11 @@
 		4FFE7C6923C1C59000C76FC0 /* ชื่อ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */; };
 		4FFE7C6A23C1C59000C76FC0 /* พบ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5F23C1C59000C76FC0 /* พบ.mov */; };
 		4FFE7C6D23C3698C00C76FC0 /* WordCut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */; };
+		4FFE7C7323C74E7700C76FC0 /* เป็นอย่างไร.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */; };
+		4FFE7C7423C74E7700C76FC0 /* ฉัน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */; };
+		4FFE7C7523C74E7700C76FC0 /* คุณ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7023C74E7700C76FC0 /* คุณ.mov */; };
+		4FFE7C7623C74E7700C76FC0 /* วันนี้.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */; };
+		4FFE7C7723C74E7700C76FC0 /* สบายดีหรือเปล่า.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */; };
 		7F2E2FA2976394A1873AF7E8 /* Pods_seniorProject62.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1341797BEB2BD054666159 /* Pods_seniorProject62.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +93,11 @@
 		4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ชื่อ.mov"; sourceTree = "<group>"; };
 		4FFE7C5F23C1C59000C76FC0 /* พบ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "พบ.mov"; sourceTree = "<group>"; };
 		4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCut.swift; sourceTree = "<group>"; };
+		4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เป็นอย่างไร.mov"; sourceTree = "<group>"; };
+		4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฉัน.mov"; sourceTree = "<group>"; };
+		4FFE7C7023C74E7700C76FC0 /* คุณ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "คุณ.mov"; sourceTree = "<group>"; };
+		4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "วันนี้.mov"; sourceTree = "<group>"; };
+		4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สบายดีหรือเปล่า.mov"; sourceTree = "<group>"; };
 		9C76333F220AA7520F0EFAD6 /* Pods-seniorProject62.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorProject62.release.xcconfig"; path = "Target Support Files/Pods-seniorProject62/Pods-seniorProject62.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +176,11 @@
 		4FC489DF23AD133100FEF240 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				4FFE7C7023C74E7700C76FC0 /* คุณ.mov */,
+				4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */,
+				4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */,
+				4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */,
+				4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */,
 				4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */,
 				4FFE7C5A23C1C59000C76FC0 /* คนหูดี.mov */,
 				4FFE7C5723C1C59000C76FC0 /* คนหูหนวก.mov */,
@@ -269,6 +284,7 @@
 			files = (
 				4FC489DB23AD0EBD00FEF240 /* Mitr-Light.ttf in Resources */,
 				4FC489AC23AC8B9400FEF240 /* GoogleService-Info.plist in Resources */,
+				4FFE7C7623C74E7700C76FC0 /* วันนี้.mov in Resources */,
 				4FFE7C6823C1C59000C76FC0 /* ขอบคุณ.mov in Resources */,
 				4FC489DE23AD0EBD00FEF240 /* Mitr-Medium.ttf in Resources */,
 				4F715E5E23B71EDC00FE8CDE /* ขอบคุณมาก.mov in Resources */,
@@ -280,10 +296,14 @@
 				4FFE7C6723C1C59000C76FC0 /* ลาก่อน.mov in Resources */,
 				4FC489DA23AD0EBD00FEF240 /* Mitr-ExtraLight.ttf in Resources */,
 				4FFE7C6923C1C59000C76FC0 /* ชื่อ.mov in Resources */,
+				4FFE7C7723C74E7700C76FC0 /* สบายดีหรือเปล่า.mov in Resources */,
+				4FFE7C7523C74E7700C76FC0 /* คุณ.mov in Resources */,
+				4FFE7C7323C74E7700C76FC0 /* เป็นอย่างไร.mov in Resources */,
 				4FC489D923AD0EBD00FEF240 /* Mitr-SemiBold.ttf in Resources */,
 				4FC489A123AC8B7300FEF240 /* Assets.xcassets in Resources */,
 				4F35DCB323BE19F0002056C3 /* LaunchScreen.storyboard in Resources */,
 				4FFE7C6023C1C59000C76FC0 /* ครอบครัว.mov in Resources */,
+				4FFE7C7423C74E7700C76FC0 /* ฉัน.mov in Resources */,
 				4FC489DD23AD0EBD00FEF240 /* Mitr-Regular.ttf in Resources */,
 				4FC4899C23AC8B7000FEF240 /* Main.storyboard in Resources */,
 				4FFE7C6323C1C59000C76FC0 /* พบกันใหม่.mov in Resources */,

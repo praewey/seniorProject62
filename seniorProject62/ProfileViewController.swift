@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -16,6 +17,22 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func signOutBtnTab(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        self.transitionToWelcome()
+    }
+    
+    func transitionToWelcome(){
+        let signinViewController = storyboard?.instantiateViewController (identifier:Constants.Storyboard.SigninViewController) as? SigninViewController
+        
+        view.window?.rootViewController = signinViewController
+        view.window?.makeKeyAndVisible()
 
+    }
+    
 
 }
