@@ -61,6 +61,17 @@
                                             <action selector="touchCancel:" destination="UE3-Tg-NWU" eventType="touchUpInside" id="GCa-QI-zqn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMo-CX-Lah">
+                                        <rect key="frame" x="355" y="163" width="28" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="keyboard" catalog="system"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BxQ-qy-O8v">
+                                        <rect key="frame" x="13" y="154" width="314" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -68,20 +79,13 @@
                                 <rect key="frame" x="0.0" y="401" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZFT-qL-YjB">
-                                        <rect key="frame" x="8" y="27" width="344" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA2-oG-WqK">
+                                        <rect key="frame" x="8" y="30" width="398" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUX-lU-gWV">
-                                        <rect key="frame" x="365" y="29" width="36" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="ค้นหา"/>
-                                        <connections>
-                                            <action selector="touchSearch:" destination="UE3-Tg-NWU" eventType="touchUpInside" id="ph0-uL-7TT"/>
-                                        </connections>
-                                    </button>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </view>
                         </subviews>
@@ -90,12 +94,20 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="เสียงแปลภาษา" image="microphone" id="to6-q5-zx5"/>
                     <connections>
+                        <outlet property="fakeTextField" destination="BxQ-qy-O8v" id="hTt-Eq-oSU"/>
+                        <outlet property="searchTextField" destination="yYv-WJ-OCY" id="MmC-o2-D2L"/>
                         <outlet property="speechBtn" destination="0ix-FE-0ux" id="AZN-pm-7zN"/>
-                        <outlet property="speechTextField" destination="ZFT-qL-YjB" id="6bF-hu-Zqk"/>
+                        <outlet property="speechLabel" destination="BA2-oG-WqK" id="lBc-l2-XFw"/>
                         <outlet property="videoView" destination="9dW-Nk-etS" id="xiT-jL-jKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6i-6r-j6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="yYv-WJ-OCY">
+                    <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </objects>
             <point key="canvasLocation" x="1428.985507246377" y="266.57608695652175"/>
         </scene>
@@ -115,7 +127,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5rN-fo-Ad5">
-                                <rect key="frame" x="60" y="212.66666666666666" width="294" height="357.33333333333337"/>
+                                <rect key="frame" x="60" y="222.66666666666666" width="294" height="347.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAl-m3-AV9">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="39"/>
@@ -125,7 +137,7 @@
                                         </state>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yAM-Wi-Pjg">
-                                        <rect key="frame" x="0.0" y="57.000000000000028" width="294" height="45.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="57.000000000000028" width="294" height="40.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="อีเมล" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmn-T3-VKN">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="23.666666666666668"/>
@@ -133,16 +145,15 @@
                                                 <color key="textColor" red="0.051304683089999997" green="0.29953911900000002" blue="0.71768623590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testthsl@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbd-UW-5OV">
-                                                <rect key="frame" x="0.0" y="23.666666666666629" width="294" height="22"/>
-                                                <fontDescription key="fontDescription" name="Mitr-ExtraLight" family="Mitr" pointSize="14"/>
-                                                <color key="textColor" red="0.051304683089999997" green="0.29953911900000002" blue="0.71768623590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="testthsl@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tor-ds-FJ4">
+                                                <rect key="frame" x="0.0" y="23.666666666666629" width="294" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6JP-q6-HYI">
-                                        <rect key="frame" x="0.0" y="120.66666666666667" width="294" height="45.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="115.66666666666667" width="294" height="40.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อผู้ใช้" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-Iz-5wb">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="23.666666666666668"/>
@@ -150,16 +161,15 @@
                                                 <color key="textColor" red="0.051304683089999997" green="0.29953911900000002" blue="0.71768623590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testthsl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-PQ-RbN">
-                                                <rect key="frame" x="0.0" y="23.666666666666686" width="294" height="22"/>
-                                                <fontDescription key="fontDescription" name="Mitr-ExtraLight" family="Mitr" pointSize="14"/>
-                                                <color key="textColor" red="0.051304683089999997" green="0.29953911900000002" blue="0.71768623590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROX-z6-vT0">
+                                                <rect key="frame" x="0.0" y="23.666666666666686" width="294" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="es9-Mx-SfE">
-                                        <rect key="frame" x="0.0" y="184.33333333333334" width="294" height="45.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="174.33333333333334" width="294" height="45.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วันเกิด" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwM-YY-SE9">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="23.666666666666668"/>
@@ -176,7 +186,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-Nt-0Na">
-                                        <rect key="frame" x="0.0" y="248.00000000000003" width="294" height="45.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="238.00000000000003" width="294" height="45.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพศ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkE-YT-dHm">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="23.666666666666668"/>
@@ -193,7 +203,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-jl-H8S">
-                                        <rect key="frame" x="0.0" y="311.66666666666674" width="294" height="45.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="301.66666666666674" width="294" height="45.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ระดับการได้ยิน" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrH-Pw-POv">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="23.666666666666668"/>
@@ -235,7 +245,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YVW-CD-0t9" kind="presentation" modalPresentationStyle="fullScreen" id="zMS-Mp-ciN"/>
+                                    <action selector="signOutBtnTab:" destination="YgQ-8b-mtG" eventType="touchUpInside" id="lXY-mT-PeR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -294,7 +304,7 @@
         <!--Signin View Controller-->
         <scene sceneID="hDU-l6-WSK">
             <objects>
-                <viewController storyboardIdentifier="SigninViewController" id="YVW-CD-0t9" customClass="SigninViewController" customModule="seniorProject62" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SigninVC" id="YVW-CD-0t9" customClass="SigninViewController" customModule="seniorProject62" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMy-oy-F23">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,6 +619,7 @@
         <image name="clear" catalog="system" width="64" height="56"/>
         <image name="facebook" width="512" height="512"/>
         <image name="focus" width="19.333333969116211" height="19.333333969116211"/>
+        <image name="keyboard" catalog="system" width="64" height="34"/>
         <image name="memories" catalog="system" width="64" height="52"/>
         <image name="mic" width="23.333333969116211" height="23.333333969116211"/>
         <image name="microphone" width="19.333333969116211" height="19.333333969116211"/>
@@ -617,7 +628,4 @@
         <image name="user-3" width="142" height="177"/>
         <image name="welcome" width="344" height="506"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="MvL-YI-gg1"/>
-    </inferredMetricsTieBreakers>
 </document>
