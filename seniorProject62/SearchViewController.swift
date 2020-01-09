@@ -15,10 +15,12 @@ import Alamofire
 class SearchViewController: UIViewController,UISearchBarDelegate {
     
     @IBOutlet weak var videoView: UIView!
-    @IBOutlet weak var speechTextField: UITextField!
+    @IBOutlet weak var speechLabel: UILabel!
     @IBOutlet weak var speechBtn: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var fakeTextField: UITextField!
     
-    var player: AVPlayer!
+    var player: AVQueuePlayer!
     var playerLayer: AVPlayerLayer!
     
     var isSpeech: Bool = false
@@ -28,23 +30,33 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     var recognitionTask: SFSpeechRecognitionTask?//ตัวจัดการการแปลงเสียงเป็น text
     var audioInputNode: AVAudioInputNode?
     
+    var currentVideoIndex: Int = 0//เก็บ index เพื่อดูว่าวีดีเล่นที่ไหนแล้ว
+    var cutWords: [String] = []
+    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.endEditing(true) //keyboard
         
-        player = AVPlayer()
+        player = AVQueuePlayer()
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspectFill //ขนาดคลิป
         
         videoView.layer.addSublayer(playerLayer)
         
+        fakeTextField.inputAccessoryView = searchTextField
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        player.play()
+        //        player.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,7 +64,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         playerLayer.frame = videoView.bounds
     }
     
-
+    
     //
     @IBAction func touchSpeech(_ sender: Any) {
         if !isSpeech {
@@ -67,23 +79,23 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
             }
             
             if SFSpeechRecognizer.authorizationStatus() == .authorized {
-                 startRecording()
+                startRecording()
             }//อนุญาตแล้ว
             
         } else {
             stopRecording()
-            searchText(text: speechTextField.text!)
+            searchText(text: speechLabel.text!)
         }
         
     }
     
     @IBAction func touchSearch(_ sender: Any) {
-        searchText(text: speechTextField.text!)
+        searchText(text: speechLabel.text!)
     }
     
     @IBAction func touchCancel(_ sender: Any) {
         stopRecording()
-        speechTextField.text = ""
+        speechLabel.text = "..."
     }
     
     func startRecording() {
@@ -106,7 +118,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, _ in
             if let text = result?.bestTranscription {
-                self.speechTextField.text = text.formattedString
+                self.speechLabel.text = text.formattedString
             }
             
         })
@@ -124,6 +136,8 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     }
     
     func searchText(text: String) {
+        currentVideoIndex = 0
+        
         let url = "http://ec2-3-17-128-156.us-east-2.compute.amazonaws.com:5000/cut?word=\(text)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
@@ -131,43 +145,82 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
             let decoder = JSONDecoder()
             do {
                 let data = try decoder.decode(WordCut.self, from: response.data!)
-                self.speechTextField.text = data.cut.joined(separator: " ")
+                self.speechLabel.text = data.cut.joined(separator: " ")
+                self.cutWords = data.cut
+                
+                self.db.collection("words").getDocuments { query, error in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        var texts: [String] = []
+                        
+                        for cutWord in self.cutWords {
+                            for word in query!.documents {
+                                let data = word.data()
+                                
+                                for tag in data["tags"] as! NSArray {
+                                    if tag as! String == cutWord {
+                                        texts.append(data["text"] as! String)
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        
+                        var items: [AVPlayerItem] = []
+                        for text in texts {
+                            let bundlePath = Bundle.main.path(forResource: text, ofType: "mov")
+                            guard let _bundlePath = bundlePath else {
+                                print("ไม่เจอ")
+                                return
+                            }
+                            
+                            let url = URL(fileURLWithPath: _bundlePath)
+                            let item = AVPlayerItem(url: url)
+                            items.append(item)
+                            
+                            self.player.insert(item, after: nil)
+                        }
+                        
+                        NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items().first)
+                        self.player.play()
+                        
+                        self.highlighttWord(index: self.currentVideoIndex)
+                    }
+                }
+                
             } catch {
                 print(error)
             }
         }
-        
-        db.collection("words").getDocuments { query, error in
-            if let error = error {
-                print(error)
-            } else {
-                var _text = text
-                
-                for word in query!.documents {
-                    let data = word.data()
-                    
-                    for tag in data["tags"] as! NSArray {
-                        if tag as! String == text {
-                            _text = data["text"] as! String
-                            break
-                        }
-                    }
-                }
-                
-                let bundlePath = Bundle.main.path(forResource: _text, ofType: "mov")
-                guard let _bundlePath = bundlePath else {
-                        print("ไม่เจอ")
-                        return
-                }
-                
-                let url = URL(fileURLWithPath: _bundlePath)
-                let item = AVPlayerItem(url: url)
-                self.player.replaceCurrentItem(with: item)
-                self.player.play()
-            }
-        }
-        
-
     }
     
+    @objc func didVideoEnd(note: NSNotification) {
+        NotificationCenter.default.removeObserver(self)
+        
+        currentVideoIndex += 1
+        if player.items().count > 1 {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items()[1])
+            
+            highlighttWord(index: currentVideoIndex)
+            
+        } else if player.items().count > 0 {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items()[0])
+            
+            let att = NSMutableAttributedString(string: speechLabel.text!)
+            speechLabel.attributedText = att
+            
+        }
+    }
+    
+    func highlighttWord(index: Int) {
+        let s = speechLabel.text! as NSString
+        let att = NSMutableAttributedString(string: speechLabel.text!)
+        
+        let r = s.range(of: cutWords[index], options: .caseInsensitive)
+        let color = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        att.addAttribute(.foregroundColor, value: color, range: r)
+        
+        speechLabel.attributedText = att
+    }
 }
