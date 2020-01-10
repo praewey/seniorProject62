@@ -9,9 +9,14 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FacebookCore
+import FacebookLogin
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 class SigninViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signinBtn: UIButton!
@@ -37,9 +42,7 @@ class SigninViewController: UIViewController {
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         setupElement()//set show label error
-
-
-
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -47,11 +50,8 @@ class SigninViewController: UIViewController {
     }
     
     func setupElement() {
-        self.errorLabel.alpha = 0
+        self.errorLabel.alpha = 0 //ซ่อนข้อความ error
     }
-    
-
-    
     
     
     @IBAction func signinBtnTab(_ sender: Any) {
@@ -68,15 +68,46 @@ class SigninViewController: UIViewController {
             }
             else {
                 let maintabbarViewController = self.storyboard?.instantiateViewController (identifier:Constants.Storyboard.MaintabbarViewController) as? MaintabbarViewController
-
+                
                 self.view.window?.rootViewController = maintabbarViewController
                 self.view.window?.resignKey()
             }
-            
-            
         }
     }
     
-
-
+        @IBAction func loginFacebook(_ sender: Any) {
+    
+            let loginManager = LoginManager()
+            loginManager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
+                switch result {
+                case .cancelled:
+                    print("User cancelled login")
+                    break
+                case .failed(let error):
+                    print("Login failed with error \(error.localizedDescription)")
+                    break
+                case .success(let grantedPermissions, let declinedpermissions, let accessToken):
+                    print("Login succeeded with granted permissions: \(grantedPermissions)")
+    //                self.getProfileFacebook()
+                    let maintabbarViewController = self.storyboard?.instantiateViewController (identifier:Constants.Storyboard.MaintabbarViewController) as? MaintabbarViewController
+                    self.view.window?.rootViewController = maintabbarViewController
+                    self.view.window?.resignKey()
+                }
+            }
+        }
+    
+    //    func getProfileFacebook() {
+    //        let connection = GraphRequestConnection()
+    //        connection.add(GraphRequest(graphPath: "/me", parameters: ["fileds" : "id, name, about, birthday"], accessToken: AccessToken.current, httpMethod: HTTPMethod.GET, apiVersion: GraphAPIVersion.defaultVersion)) { response, result  in
+    //            switch result {
+    //            case .success(let response):
+    //                print("Logged in user facebook id == \(String(response.dictionaryValue!["id"]))")
+    //                print("Logged in user facebook name == \(String(response.dictionaryValue!["name"]))")
+    //                break
+    //            case .failed(let error):
+    //                print("We have error fetching logged in user profile == \(error.localizedDescription)")
+    //            }
+    //        }
+    //        connection.start()
+    //    }
 }
