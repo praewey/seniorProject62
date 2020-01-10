@@ -15,6 +15,9 @@ target 'seniorProject62' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
 
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
   # Pods for seniorProject62
 
