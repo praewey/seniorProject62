@@ -16,7 +16,7 @@ struct Constants {
         static let SpeechViewController = "SpeechVC"
         static let MaintabbarViewController = "MaintabbarVC"
         static let SigninViewController = "SigninVC"
-        
+        static let HandDetectMLViewController = "HandDetectMLVC"
     }
     
 
