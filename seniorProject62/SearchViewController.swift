@@ -12,13 +12,14 @@ import Speech
 import Firebase
 import Alamofire
 
-class SearchViewController: UIViewController,UISearchBarDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var speechLabel: UILabel!
     @IBOutlet weak var speechBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var fakeTextField: UITextField!
+    @IBOutlet weak var playAgainBtn: UIButton!
     
     var player: AVQueuePlayer!
     var playerLayer: AVPlayerLayer!
@@ -32,12 +33,15 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     
     var currentVideoIndex: Int = 0//เก็บ index เพื่อดูว่าวีดีเล่นที่ไหนแล้ว
     var cutWords: [String] = []
+    var realWords: [String] = []
+    
+    var isCallAPI: Bool = false
     
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.endEditing(true) //keyboard
+        self.videoView.backgroundColor = UIColor(patternImage: UIImage(named: "bgfuncSpeech2.jpg")!)
         
         player = AVQueuePlayer()
         playerLayer = AVPlayerLayer(player: player)
@@ -46,11 +50,22 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         videoView.layer.addSublayer(playerLayer)
         
         fakeTextField.inputAccessoryView = searchTextField
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        videoView.addGestureRecognizer(tap)
+        
+        searchTextField.delegate = self
+        
+        playAgainBtn.isHidden = true
+    }
+    
+    @objc func hideKeyboard() {
+        searchTextField.resignFirstResponder()
+        fakeTextField.resignFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        player.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,35 +82,61 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
     
     //
     @IBAction func touchSpeech(_ sender: Any) {
-        if !isSpeech {
-            if SFSpeechRecognizer.authorizationStatus() == .notDetermined {
-                SFSpeechRecognizer.requestAuthorization { status in
-                    if status == .authorized {
-                        self.startRecording()
-                    } else {
-                        print("ปฏิเสธการใช้ไมค์")
+        if !isCallAPI && player.items().count == 0 {
+            if !isSpeech {
+                speechLabel.text = ""
+                
+                if SFSpeechRecognizer.authorizationStatus() == .notDetermined {
+                    SFSpeechRecognizer.requestAuthorization { status in
+                        if status == .authorized {
+                            self.startRecording()
+                        } else {
+                            print("ปฏิเสธการใช้ไมค์")
+                        }
                     }
                 }
+                
+                if SFSpeechRecognizer.authorizationStatus() == .authorized {
+                    startRecording()
+                }//อนุญาตแล้ว
+                
+            } else {
+                stopRecording()
+                searchText(text: speechLabel.text!)
             }
-            
-            if SFSpeechRecognizer.authorizationStatus() == .authorized {
-                startRecording()
-            }//อนุญาตแล้ว
-            
-        } else {
-            stopRecording()
-            searchText(text: speechLabel.text!)
         }
-        
     }
     
-    @IBAction func touchSearch(_ sender: Any) {
-        searchText(text: speechLabel.text!)
+    @IBAction func touchReplay(_ sender: Any) {
+        if realWords.count > 0 && player.items().count == 0 {
+            currentVideoIndex = 0
+            
+            prepareResultVideo(texts: realWords)
+            playResultVideo()
+            highlighttWord(index: currentVideoIndex)
+        }
     }
     
-    @IBAction func touchCancel(_ sender: Any) {
-        stopRecording()
-        speechLabel.text = "..."
+    @IBAction func touchPlayAgain(_ sender: Any) {
+        if realWords.count > 0 && player.items().count == 0 {
+            currentVideoIndex = 0
+            
+            prepareResultVideo(texts: realWords)
+            playResultVideo()
+            highlighttWord(index: currentVideoIndex)
+        }
+    }
+    
+    @IBAction func touchKeyboard(_ sender: Any) {
+        if !isCallAPI && player.items().count == 0 {
+            searchTextField.text = cutWords.joined(separator: "")
+            
+            fakeTextField.becomeFirstResponder()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                self.searchTextField.becomeFirstResponder()
+            }
+        }
     }
     
     func startRecording() {
@@ -135,7 +176,12 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         
     }
     
+    func resetCallAPI() {
+        
+    }//ยกเลิกการเรียก API ทั้งหมด
+    
     func searchText(text: String) {
+        isCallAPI = true
         currentVideoIndex = 0
         
         let url = "http://ec2-3-17-128-156.us-east-2.compute.amazonaws.com:5000/cut?word=\(text)"
@@ -148,44 +194,41 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
                 self.speechLabel.text = data.cut.joined(separator: " ")
                 self.cutWords = data.cut
                 
+//  APIcancel
+                
                 self.db.collection("words").getDocuments { query, error in
+                    
+                    //  APIcancel
                     if let error = error {
                         print(error)
                     } else {
-                        var texts: [String] = []
+                        self.realWords = []
                         
                         for cutWord in self.cutWords {
+                            var found: Bool = false
+                            
                             for word in query!.documents {
                                 let data = word.data()
                                 
                                 for tag in data["tags"] as! NSArray {
                                     if tag as! String == cutWord {
-                                        texts.append(data["text"] as! String)
+                                        self.realWords.append(data["text"] as! String)
+                                        found = true
                                         break
                                     }
                                 }
                             }
-                        }
-                        
-                        var items: [AVPlayerItem] = []
-                        for text in texts {
-                            let bundlePath = Bundle.main.path(forResource: text, ofType: "mov")
-                            guard let _bundlePath = bundlePath else {
-                                print("ไม่เจอ")
-                                return
+                            
+                            if !found {
+                                self.realWords.append(cutWord)
                             }
-                            
-                            let url = URL(fileURLWithPath: _bundlePath)
-                            let item = AVPlayerItem(url: url)
-                            items.append(item)
-                            
-                            self.player.insert(item, after: nil)
                         }
                         
-                        NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items().first)
-                        self.player.play()
-                        
+                        self.prepareResultVideo(texts: self.realWords)
+                        self.playResultVideo()
                         self.highlighttWord(index: self.currentVideoIndex)
+                        
+                        //  APIcancel
                     }
                 }
                 
@@ -193,6 +236,40 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
                 print(error)
             }
         }
+    }
+    
+    func resetCurrentVideo() {
+        
+    }
+    
+    func prepareResultVideo(texts: [String]) {
+        var items: [AVPlayerItem] = []
+        for text in texts {
+            let bundlePath = Bundle.main.path(forResource: text, ofType: "mov")
+            guard let _bundlePath = bundlePath else {
+                let url = URL(fileURLWithPath: Bundle.main.path(forResource: "warning", ofType: "mov")!)
+                let item = AVPlayerItem(url: url)
+                items.append(item)
+                
+                self.player.insert(item, after: nil)
+                
+                continue
+            }
+            
+            let url = URL(fileURLWithPath: _bundlePath)
+            let item = AVPlayerItem(url: url)
+            items.append(item)
+            
+            self.player.insert(item, after: nil)
+        }
+    }
+    
+    func playResultVideo() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items().first)
+        player.play()
+        
+        playAgainBtn.isHidden = true
+        isCallAPI = false
     }
     
     @objc func didVideoEnd(note: NSNotification) {
@@ -210,6 +287,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
             let att = NSMutableAttributedString(string: speechLabel.text!)
             speechLabel.attributedText = att
             
+            playAgainBtn.isHidden = false
         }
     }
     
@@ -222,5 +300,13 @@ class SearchViewController: UIViewController,UISearchBarDelegate {
         att.addAttribute(.foregroundColor, value: color, range: r)
         
         speechLabel.attributedText = att
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchText(text: searchTextField.text!)
+        
+        hideKeyboard()
+        
+        return true
     }
 }
