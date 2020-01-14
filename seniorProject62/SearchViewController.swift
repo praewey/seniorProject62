@@ -15,6 +15,7 @@ import Alamofire
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var adView: UIView!
     @IBOutlet weak var speechLabel: UILabel!
     @IBOutlet weak var speechBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -35,7 +36,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     var cutWords: [String] = []
     var realWords: [String] = []
     
-    var isCallAPI: Bool = false
+    var isCallAPI: Bool = false // มีการเรียก API ไปหรือยัง
+    var isCancelAPI: Bool = false // มีการยกเลิก API ไปยัง
+    
+    var adPlayer: AVPlayer!
+    var adPlayerLayer: AVPlayerLayer!
     
     let db = Firestore.firestore()
     
@@ -51,12 +56,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         fakeTextField.inputAccessoryView = searchTextField
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        videoView.addGestureRecognizer(tap)
+        let tapVideo = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        videoView.addGestureRecognizer(tapVideo)
+
+        let tapAd = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        adView.addGestureRecognizer(tapAd)
         
         searchTextField.delegate = self
         
         playAgainBtn.isHidden = true
+        
+        adPlayer = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "support", ofType: "mov")!))
+        adPlayerLayer = AVPlayerLayer(player: adPlayer)
+        adPlayerLayer.videoGravity = .resizeAspectFill
+        adView.layer.addSublayer(adPlayerLayer)
+        
+        adView.isHidden = true // ซ่อน ad ไว้
     }
     
     @objc func hideKeyboard() {
@@ -77,11 +92,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         playerLayer.frame = videoView.bounds
+        adPlayerLayer.frame = adView.bounds
     }
     
     
     //
     @IBAction func touchSpeech(_ sender: Any) {
+        isCancelAPI = false
+        
         if !isCallAPI && player.items().count == 0 {
             if !isSpeech {
                 speechLabel.text = ""
@@ -107,16 +125,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func touchReplay(_ sender: Any) {
-        if realWords.count > 0 && player.items().count == 0 {
-            currentVideoIndex = 0
-            
-            prepareResultVideo(texts: realWords)
-            playResultVideo()
-            highlighttWord(index: currentVideoIndex)
-        }
-    }
-    
     @IBAction func touchPlayAgain(_ sender: Any) {
         if realWords.count > 0 && player.items().count == 0 {
             currentVideoIndex = 0
@@ -128,6 +136,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func touchKeyboard(_ sender: Any) {
+        isCancelAPI = false
+        
         if !isCallAPI && player.items().count == 0 {
             searchTextField.text = cutWords.joined(separator: "")
             
@@ -136,6 +146,27 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 self.searchTextField.becomeFirstResponder()
             }
+        }
+    }
+    
+    @IBAction func touchCancel(_ sender: Any) {
+        //
+        if adView.isHidden || !playAgainBtn.isHidden {
+            
+            isCancelAPI = true
+            isCallAPI = false // ไม่เรียก API
+            
+            //ยกเลิกการเล่นวีดีโอภาษามือ
+            NotificationCenter.default.removeObserver(self)
+            player.pause()
+            player.removeAllItems()
+            
+            speechLabel.text = "..." //
+            cutWords.removeAll()
+            realWords.removeAll()
+            
+            adView.isHidden = true
+            playAgainBtn.isHidden = true
         }
     }
     
@@ -160,7 +191,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, _ in
             if let text = result?.bestTranscription {
                 self.speechLabel.text = text.formattedString
-            }
+            }//bestTranscription
             
         })
     }
@@ -180,58 +211,63 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
     }//ยกเลิกการเรียก API ทั้งหมด
     
+    //ส่งข้อความที่รับจากเสียงหรือคีย์บอร์ดไปตัดคำ
     func searchText(text: String) {
         isCallAPI = true
         currentVideoIndex = 0
         
         let url = "http://ec2-3-17-128-156.us-east-2.compute.amazonaws.com:5000/cut?word=\(text)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
+        //encodedUrl การเข้ารหัส เหมือนการซิปไฟล์ก่อนที่จะส่งไฟล์ไป
         Alamofire.request(encodedUrl!).response { response in
             let decoder = JSONDecoder()
             do {
+                // ตัดคำ
                 let data = try decoder.decode(WordCut.self, from: response.data!)
                 self.speechLabel.text = data.cut.joined(separator: " ")
                 self.cutWords = data.cut
                 
-//  APIcancel
-                
-                self.db.collection("words").getDocuments { query, error in
+                if !self.isCancelAPI {
                     
-                    //  APIcancel
-                    if let error = error {
-                        print(error)
-                    } else {
-                        self.realWords = []
+                    //หา tag
+                    self.db.collection("words").getDocuments { query, error in
                         
-                        for cutWord in self.cutWords {
-                            var found: Bool = false
+                        if !self.isCancelAPI {
                             
-                            for word in query!.documents {
-                                let data = word.data()
+                            if let error = error {
+                                print(error)
+                            } else {
+                                self.realWords = []
                                 
-                                for tag in data["tags"] as! NSArray {
-                                    if tag as! String == cutWord {
-                                        self.realWords.append(data["text"] as! String)
-                                        found = true
-                                        break
+                                for cutWord in self.cutWords {
+                                    var found: Bool = false
+                                    
+                                    for word in query!.documents {
+                                        let data = word.data()
+                                        
+                                        for tag in data["tags"] as! NSArray {
+                                            if tag as! String == cutWord {
+                                                self.realWords.append(data["text"] as! String)
+                                                found = true
+                                                break
+                                            }
+                                        }
+                                    }
+                                    
+                                    if !found {
+                                        self.realWords.append(cutWord)
                                     }
                                 }
+                                
+                                self.prepareResultVideo(texts: self.realWords)
+                                self.playResultVideo()
+                                self.highlighttWord(index: self.currentVideoIndex)
                             }
-                            
-                            if !found {
-                                self.realWords.append(cutWord)
-                            }
-                        }
-                        
-                        self.prepareResultVideo(texts: self.realWords)
-                        self.playResultVideo()
-                        self.highlighttWord(index: self.currentVideoIndex)
-                        
-                        //  APIcancel
+                        }// self.isCancelAPI
+
                     }
-                }
-                
+                }//isCancelAPI
+
             } catch {
                 print(error)
             }
@@ -269,6 +305,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         player.play()
         
         playAgainBtn.isHidden = true
+        adView.isHidden = true // ซ่อน ad เมื่อ ad จบ
         isCallAPI = false
     }
     
@@ -277,18 +314,26 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         currentVideoIndex += 1
         if player.items().count > 1 {
-            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items()[1])
+            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.items()[1])
             
             highlighttWord(index: currentVideoIndex)
             
         } else if player.items().count > 0 {
-            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player.items()[0])
+            NotificationCenter.default.addObserver(self, selector: #selector(self.didVideoEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.items()[0])
             
             let att = NSMutableAttributedString(string: speechLabel.text!)
             speechLabel.attributedText = att
             
-            playAgainBtn.isHidden = false
+            NotificationCenter.default.addObserver(self, selector: #selector(didAdEnd(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: adPlayer.currentItem)
+            adView.isHidden = false // แสดง ad
+            adPlayer.play()
+            
+            db.collection("ad-views").addDocument(data: ["view": Date()])
         }
+    }
+    
+    @objc func didAdEnd(note: NSNotification) {
+        playAgainBtn.isHidden = false
     }
     
     func highlighttWord(index: Int) {
