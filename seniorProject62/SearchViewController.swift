@@ -14,8 +14,11 @@ import Alamofire
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
+    
+    @IBOutlet weak var loadingView: UIImageView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var adView: UIView!
+    @IBOutlet weak var btnView: UIView!
     @IBOutlet weak var speechLabel: UILabel!
     @IBOutlet weak var speechBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -46,7 +49,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        loadingView.isHidden = true
         self.videoView.backgroundColor = UIColor(patternImage: UIImage(named: "bgfuncSpeech2.jpg")!)
+        speechBtn.layer.cornerRadius = speechBtn.frame.height / 2
+        speechBtn.clipsToBounds = true
         
         player = AVQueuePlayer()
         playerLayer = AVPlayerLayer(player: player)
@@ -58,7 +64,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         let tapVideo = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         videoView.addGestureRecognizer(tapVideo)
-
+        
         let tapAd = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         adView.addGestureRecognizer(tapAd)
         
@@ -98,6 +104,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     //
     @IBAction func touchSpeech(_ sender: Any) {
+        //        //animation
+        //        let pulse = PauseAnimation(nemberOfPulses: Float.infinity, radius: 50, position: (sender as AnyObject).center)
+        //        pulse.animationDuration = 1.0
+        //        pulse.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        //        self.btnView.layer.insertSublayer(pulse, below: self.btnView.layer)
+        //
+        //        let pulse1 = PauseAnimation(nemberOfPulses: Float.infinity, radius: 20, position: (sender as AnyObject).center)
+        //        pulse1.animationDuration = 1.5
+        //        pulse1.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        //        self.btnView.layer.insertSublayer(pulse1, below: self.btnView.layer)
+        
         isCancelAPI = false
         
         if !isCallAPI && player.items().count == 0 {
@@ -108,6 +125,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                     SFSpeechRecognizer.requestAuthorization { status in
                         if status == .authorized {
                             self.startRecording()
+                            
                         } else {
                             print("ปฏิเสธการใช้ไมค์")
                         }
@@ -121,6 +139,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             } else {
                 stopRecording()
                 searchText(text: speechLabel.text!)
+            }
+        } else {
+            touchCancel(self)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.touchSpeech(self)
             }
         }
     }
@@ -136,22 +160,24 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func touchKeyboard(_ sender: Any) {
-        isCancelAPI = false
-        
         if !isCallAPI && player.items().count == 0 {
             searchTextField.text = cutWords.joined(separator: "")
-            
-            fakeTextField.becomeFirstResponder()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                self.searchTextField.becomeFirstResponder()
-            }
+        } else {
+            searchTextField.text = ""
+        }
+        
+        fakeTextField.becomeFirstResponder()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.searchTextField.becomeFirstResponder()
         }
     }
     
     @IBAction func touchCancel(_ sender: Any) {
         //
         if adView.isHidden || !playAgainBtn.isHidden {
+            
+            loadingView.isHidden = true
             
             isCancelAPI = true
             isCallAPI = false // ไม่เรียก API
@@ -204,7 +230,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         isSpeech = false
         speechBtn.setBackgroundImage(UIImage(named: "mic"), for: .normal)
-        
     }
     
     func resetCallAPI() {
@@ -213,8 +238,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     //ส่งข้อความที่รับจากเสียงหรือคีย์บอร์ดไปตัดคำ
     func searchText(text: String) {
-        isCallAPI = true
+        isCancelAPI = false //ยกเลิก การยกเลิก API
+        isCallAPI = true // กำลังเรียก API
         currentVideoIndex = 0
+        
+        loadingView.isHidden = false
+        loadingView.loadGif(name: "loading")
         
         let url = "http://ec2-3-17-128-156.us-east-2.compute.amazonaws.com:5000/cut?word=\(text)"
         let encodedUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -259,15 +288,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                                     }
                                 }
                                 
+                                self.loadingView.isHidden = true
                                 self.prepareResultVideo(texts: self.realWords)
                                 self.playResultVideo()
                                 self.highlighttWord(index: self.currentVideoIndex)
                             }
                         }// self.isCancelAPI
-
+                        
                     }
                 }//isCancelAPI
-
+                
             } catch {
                 print(error)
             }
@@ -348,7 +378,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchText(text: searchTextField.text!)
+        
+        // เช็ควีดีโอจบหรือยัง
+        if !isCallAPI && player.items().count == 0 {
+            searchText(text: searchTextField.text!)
+        } else {
+            touchCancel(self)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.searchText(text: self.searchTextField.text!)
+            }
+        }
         
         hideKeyboard()
         
