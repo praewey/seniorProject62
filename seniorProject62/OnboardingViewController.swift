@@ -14,7 +14,7 @@ class OnboardingViewController: UIViewController , UIScrollViewDelegate{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var images: [String] = ["onboarding-4", "onboarding-5", "onboarding-6"]
+    var images: [String] = ["onboarding-9", "onboarding-8", "onboarding-7"]
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
 
     override func viewDidLoad() {

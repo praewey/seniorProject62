@@ -47,9 +47,33 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     let db = Firestore.firestore()
     
+    func updateUnreadMessage() {
+        db.collection("activities").getDocuments { query, error in
+            self.db.collection("reads").whereField("email", isEqualTo: Auth.auth().currentUser?.email ?? "").getDocuments { queryRead, errorRead in
+                
+                let reads = queryRead!.documents
+                var unreadCount = 0
+                if reads.count > 0 {
+                    unreadCount = query!.count - (reads.first!.data()["reads"] as! [String]).count
+                } else {
+                    unreadCount = query!.count
+                }
+                
+                if unreadCount > 0 {
+                    self.tabBarController?.tabBar.items?[2].badgeValue = "\(unreadCount)"
+                } else {
+                    self.tabBarController?.tabBar.items?[2].badgeValue = nil
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        loadingView.isHidden = true
+        
+        updateUnreadMessage()
+        
+        //loadingView.isHidden = true
         self.videoView.backgroundColor = UIColor(patternImage: UIImage(named: "bgfuncSpeech2.jpg")!)
         speechBtn.layer.cornerRadius = speechBtn.frame.height / 2
         speechBtn.clipsToBounds = true
@@ -80,6 +104,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         adView.isHidden = true // ซ่อน ad ไว้
     }
     
+    
+    
     @objc func hideKeyboard() {
         searchTextField.resignFirstResponder()
         fakeTextField.resignFirstResponder()
@@ -104,7 +130,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     //
     @IBAction func touchSpeech(_ sender: Any) {
-        //        //animation
+        //animation
         //        let pulse = PauseAnimation(nemberOfPulses: Float.infinity, radius: 50, position: (sender as AnyObject).center)
         //        pulse.animationDuration = 1.0
         //        pulse.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
@@ -176,6 +202,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBAction func touchCancel(_ sender: Any) {
         //
         if adView.isHidden || !playAgainBtn.isHidden {
+            stopRecording()
             
             loadingView.isHidden = true
             
@@ -187,7 +214,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             player.pause()
             player.removeAllItems()
             
-            speechLabel.text = "..." //
+            speechLabel.text = ". . ." //
             cutWords.removeAll()
             realWords.removeAll()
             
@@ -197,8 +224,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func startRecording() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: AVAudioSession.CategoryOptions.mixWithOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch { }
+        
         isSpeech = true
-        speechBtn.setBackgroundImage(UIImage(named: "micselect"), for: .normal)
+        speechBtn.setBackgroundImage(UIImage(named: "record"), for: .normal)
         
         audioInputNode = audioEngine.inputNode //รับไมโครโฟน
         let recordingFormat = audioInputNode?.outputFormat(forBus: 0)//
@@ -214,7 +246,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             print(error)
         }
         
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, _ in
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+            if let error = error  {
+                print(error)
+            }
+            
             if let text = result?.bestTranscription {
                 self.speechLabel.text = text.formattedString
             }//bestTranscription
@@ -229,7 +265,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         recognitionTask?.cancel()
         
         isSpeech = false
-        speechBtn.setBackgroundImage(UIImage(named: "mic"), for: .normal)
+        speechBtn.setBackgroundImage(UIImage(named: "microphonBtn"), for: .normal)
     }
     
     func resetCallAPI() {
@@ -381,6 +417,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         // เช็ควีดีโอจบหรือยัง
         if !isCallAPI && player.items().count == 0 {
+            touchCancel(self)
+            
             searchText(text: searchTextField.text!)
         } else {
             touchCancel(self)

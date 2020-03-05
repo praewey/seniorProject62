@@ -1,0 +1,29 @@
+//
+//  Constants.swift
+//  seniorProject62
+//
+//  Created by Praewey Spokkokkak on 20/12/2562 BE.
+//  Copyright © 2562 Praewey Spokkokkak. All rights reserved.
+//
+
+import Foundation
+
+struct Constants {
+    
+    struct Storyboard {
+        static let ViewController = "VC"
+        static let WelcomeViewController = "WelcomeVC"
+        static let HandDetectMLViewController = "HandDetectMLVC"
+        static let SearchViewController = "SearchVC"
+        
+        static let ProfileViewController = "ProfileVC"
+        static let EditProfileViewController = "EditProfileVC"
+        
+        static let SpeechViewController = "SpeechVC"
+        static let MaintabbarViewController = "MaintabbarVC"
+        
+        static let SigninViewController = "SigninVC"
+        static let SignupViewController = "SignupVC"
+
+    }
+}

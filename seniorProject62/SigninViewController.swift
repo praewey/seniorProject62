@@ -21,6 +21,7 @@ class SigninViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signinBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +29,7 @@ class SigninViewController: UIViewController {
         emailTextField.tintColor = UIColor.blue
         emailTextField.textColor = UIColor.blue
         let bottomLayerEmail = CALayer()
-        bottomLayerEmail.frame = CGRect(x: 0, y: 30, width: 350, height: 0.6)
+        bottomLayerEmail.frame = CGRect(x: 0, y: 30, width: 300, height: 0.6)
         bottomLayerEmail.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1).cgColor
         emailTextField.layer.addSublayer(bottomLayerEmail)
         
@@ -37,7 +38,7 @@ class SigninViewController: UIViewController {
         passwordTextField.tintColor = UIColor.blue
         passwordTextField.textColor = UIColor.blue
         let bottomLayerPassword = CALayer()
-        bottomLayerPassword.frame = CGRect(x: 0, y: 30, width: 350, height: 0.6)
+        bottomLayerPassword.frame = CGRect(x: 0, y: 30, width: 300, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
@@ -56,6 +57,7 @@ class SigninViewController: UIViewController {
     
     @IBAction func signinBtnTab(_ sender: Any) {
         
+        
         view.endEditing(true) //keyboard
         
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -68,33 +70,33 @@ class SigninViewController: UIViewController {
             }
             else {
                 let maintabbarViewController = self.storyboard?.instantiateViewController (identifier:Constants.Storyboard.MaintabbarViewController) as? MaintabbarViewController
-                
+                maintabbarViewController?.selectedIndex = 1
                 self.view.window?.rootViewController = maintabbarViewController
                 self.view.window?.resignKey()
             }
         }
     }
     
-        @IBAction func loginFacebook(_ sender: Any) {
-    
-            let loginManager = LoginManager()
-            loginManager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
-                switch result {
-                case .cancelled:
-                    print("User cancelled login")
-                    break
-                case .failed(let error):
-                    print("Login failed with error \(error.localizedDescription)")
-                    break
-                case .success(let grantedPermissions, let declinedpermissions, let accessToken):
-                    print("Login succeeded with granted permissions: \(grantedPermissions)")
-    //                self.getProfileFacebook()
-                    let maintabbarViewController = self.storyboard?.instantiateViewController (identifier:Constants.Storyboard.MaintabbarViewController) as? MaintabbarViewController
-                    self.view.window?.rootViewController = maintabbarViewController
-                    self.view.window?.resignKey()
-                }
-            }
-        }
+//    @IBAction func loginFacebook(_ sender: Any) {
+//
+//        let loginManager = LoginManager()
+//        loginManager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
+//            switch result {
+//            case .cancelled:
+//                print("User cancelled login")
+//                break
+//            case .failed(let error):
+//                print("Login failed with error \(error.localizedDescription)")
+//                break
+//            case .success(let grantedPermissions, let declinedpermissions, let accessToken):
+//                print("Login succeeded with granted permissions: \(grantedPermissions)")
+//                //                self.getProfileFacebook()
+//                let maintabbarViewController = self.storyboard?.instantiateViewController (identifier:Constants.Storyboard.MaintabbarViewController) as? MaintabbarViewController
+//                self.view.window?.rootViewController = maintabbarViewController
+//                self.view.window?.resignKey()
+//            }
+//        }
+//    }
     
     //    func getProfileFacebook() {
     //        let connection = GraphRequestConnection()
@@ -110,4 +112,5 @@ class SigninViewController: UIViewController {
     //        }
     //        connection.start()
     //    }
+    
 }

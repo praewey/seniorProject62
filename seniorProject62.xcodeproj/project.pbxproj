@@ -12,20 +12,72 @@
 		4F0D925723D0393400473CD9 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F0D925623D0393400473CD9 /* loading.gif */; };
 		4F0D925D23D0718500473CD9 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D925C23D0718500473CD9 /* Gif.swift */; };
 		4F35DCB323BE19F0002056C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35DCB123BE19F0002056C3 /* LaunchScreen.storyboard */; };
+		4F3B300023F6A9A400E0AB6E /* MyNameIsImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B2FFF23F6A9A400E0AB6E /* MyNameIsImageClassifier.mlmodel */; };
+		4F3B300223F6C6E800E0AB6E /* GuidelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B300123F6C6E800E0AB6E /* GuidelineViewController.swift */; };
 		4F4478EE23C8D5AA00E80EE6 /* HandDetectMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4478ED23C8D5AA00E80EE6 /* HandDetectMLViewController.swift */; };
-		4F4478F423C99F0200E80EE6 /* warning.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F4478F323C99F0200E80EE6 /* warning.mov */; };
 		4F4478F623CDC22F00E80EE6 /* ASLImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F4478F523CDC22F00E80EE6 /* ASLImageClassifier.mlmodel */; };
 		4F4478F823CDE8AC00E80EE6 /* support.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F4478F723CDE8AC00E80EE6 /* support.mov */; };
+		4F5A1ABF24090337008D6987 /* ASLImageClassifierAE.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A1ABE24090337008D6987 /* ASLImageClassifierAE.mlmodel */; };
+		4F6A5A9323E2BC5300BBE1F8 /* ฉลาด.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A6C23E2BC1500BBE1F8 /* ฉลาด.mov */; };
+		4F6A5A9423E2BC5300BBE1F8 /* ดูแลตัวเองด้วย.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A6D23E2BC1700BBE1F8 /* ดูแลตัวเองด้วย.mov */; };
+		4F6A5A9523E2BC5300BBE1F8 /* ขอบคุณ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A6E23E2BC1900BBE1F8 /* ขอบคุณ.mov */; };
+		4F6A5A9623E2BC5300BBE1F8 /* สบายดี.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A6F23E2BC1B00BBE1F8 /* สบายดี.mov */; };
+		4F6A5A9723E2BC5300BBE1F8 /* ไม่ว่าง.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7023E2BC1C00BBE1F8 /* ไม่ว่าง.mov */; };
+		4F6A5A9823E2BC5300BBE1F8 /* ขอโทษ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7123E2BC1E00BBE1F8 /* ขอโทษ.mov */; };
+		4F6A5A9923E2BC5300BBE1F8 /* เก่ง.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7223E2BC1F00BBE1F8 /* เก่ง.mov */; };
+		4F6A5A9A23E2BC5300BBE1F8 /* ใช่.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7323E2BC2100BBE1F8 /* ใช่.mov */; };
+		4F6A5A9B23E2BC5300BBE1F8 /* ฉัน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7423E2BC2300BBE1F8 /* ฉัน.mov */; };
+		4F6A5A9C23E2BC5300BBE1F8 /* ขอโทษค่ะ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7523E2BC2400BBE1F8 /* ขอโทษค่ะ.mov */; };
+		4F6A5A9D23E2BC5300BBE1F8 /* เป็นห่วง.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7623E2BC2600BBE1F8 /* เป็นห่วง.mov */; };
+		4F6A5A9E23E2BC5300BBE1F8 /* ฝันดีนะ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7723E2BC2800BBE1F8 /* ฝันดีนะ.mov */; };
+		4F6A5A9F23E2BC5300BBE1F8 /* ฉันชื่อ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7823E2BC2900BBE1F8 /* ฉันชื่อ.mov */; };
+		4F6A5AA023E2BC5300BBE1F8 /* โชคดีนะ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7923E2BC2B00BBE1F8 /* โชคดีนะ.mov */; };
+		4F6A5AA123E2BC5300BBE1F8 /* ไม่มีปัญหา.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7A23E2BC2C00BBE1F8 /* ไม่มีปัญหา.mov */; };
+		4F6A5AA223E2BC5300BBE1F8 /* ไม่ใช่.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7B23E2BC2E00BBE1F8 /* ไม่ใช่.mov */; };
+		4F6A5AA323E2BC5300BBE1F8 /* ขอบคุณมาก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7C23E2BC3000BBE1F8 /* ขอบคุณมาก.mov */; };
+		4F6A5AA423E2BC5300BBE1F8 /* สวย.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7D23E2BC3200BBE1F8 /* สวย.mov */; };
+		4F6A5AA523E2BC5300BBE1F8 /* โอเค.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7E23E2BC3300BBE1F8 /* โอเค.mov */; };
+		4F6A5AA623E2BC5300BBE1F8 /* ว่างไหม.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A7F23E2BC3500BBE1F8 /* ว่างไหม.mov */; };
+		4F6A5AA723E2BC5300BBE1F8 /* เยี่ยมมาก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8023E2BC3600BBE1F8 /* เยี่ยมมาก.mov */; };
+		4F6A5AA823E2BC5300BBE1F8 /* ทำท่ามือช้าๆหน่อย.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8123E2BC3800BBE1F8 /* ทำท่ามือช้าๆหน่อย.mov */; };
+		4F6A5AA923E2BC5300BBE1F8 /* น่ารัก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8223E2BC3A00BBE1F8 /* น่ารัก.mov */; };
+		4F6A5AAA23E2BC5300BBE1F8 /* ขอบคุณค่ะ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8323E2BC3B00BBE1F8 /* ขอบคุณค่ะ.mov */; };
+		4F6A5AAB23E2BC5300BBE1F8 /* ไม่เข้าใจ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8423E2BC3D00BBE1F8 /* ไม่เข้าใจ.mov */; };
+		4F6A5AAC23E2BC5300BBE1F8 /* ผิด.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8523E2BC3E00BBE1F8 /* ผิด.mov */; };
+		4F6A5AAD23E2BC5300BBE1F8 /* เช่นกัน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8623E2BC4000BBE1F8 /* เช่นกัน.mov */; };
+		4F6A5AAE23E2BC5300BBE1F8 /* สวัสดี.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8723E2BC4200BBE1F8 /* สวัสดี.mov */; };
+		4F6A5AAF23E2BC5300BBE1F8 /* สบายดีไหม.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8823E2BC4300BBE1F8 /* สบายดีไหม.mov */; };
+		4F6A5AB023E2BC5300BBE1F8 /* เข้าใจแล้ว.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8923E2BC4500BBE1F8 /* เข้าใจแล้ว.mov */; };
+		4F6A5AB123E2BC5300BBE1F8 /* ยินดีที่ได้รู้จัก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8A23E2BC4600BBE1F8 /* ยินดีที่ได้รู้จัก.mov */; };
+		4F6A5AB223E2BC5300BBE1F8 /* สวัสดีจ้า.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8B23E2BC4800BBE1F8 /* สวัสดีจ้า.mov */; };
+		4F6A5AB323E2BC5300BBE1F8 /* ถูก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8C23E2BC4A00BBE1F8 /* ถูก.mov */; };
+		4F6A5AB423E2BC5300BBE1F8 /* ไม่เป็นไร.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8D23E2BC4B00BBE1F8 /* ไม่เป็นไร.mov */; };
+		4F6A5AB523E2BC5300BBE1F8 /* ทำอะไรอยู่.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8E23E2BC4D00BBE1F8 /* ทำอะไรอยู่.mov */; };
+		4F6A5AB623E2BC5300BBE1F8 /* ยินดีที่ได้รู้จักเช่นกัน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A8F23E2BC4E00BBE1F8 /* ยินดีที่ได้รู้จักเช่นกัน.mov */; };
+		4F6A5AB723E2BC5300BBE1F8 /* ลาก่อน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A9023E2BC5000BBE1F8 /* ลาก่อน.mov */; };
+		4F6A5AB823E2BC5300BBE1F8 /* แล้วคุณล่ะ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A9123E2BC5200BBE1F8 /* แล้วคุณล่ะ.mov */; };
+		4F6A5AB923E2BC5300BBE1F8 /* ว่าง.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F6A5A9223E2BC5300BBE1F8 /* ว่าง.mov */; };
 		4F715E5A23B62B4C00FE8CDE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F715E5923B62B4C00FE8CDE /* OnboardingViewController.swift */; };
 		4F715E5C23B704D400FE8CDE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F715E5B23B704D400FE8CDE /* SearchViewController.swift */; };
-		4F715E5E23B71EDC00FE8CDE /* ขอบคุณมาก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4F715E5D23B71EDC00FE8CDE /* ขอบคุณมาก.mov */; };
+		4F82F701240D071D00630684 /* ASLImageClassifierAZ70.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F82F700240D071D00630684 /* ASLImageClassifierAZ70.mlmodel */; };
+		4F82F703240D147200630684 /* ASLImageClassifierAE30.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F82F702240D147200630684 /* ASLImageClassifierAE30.mlmodel */; };
+		4F913AB6240A69210093DDFF /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F913AB5240A69210093DDFF /* ImageCollectionViewCell.swift */; };
+		4F938FC523DBE0380009B836 /* ASLObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4F938FC423DBE0380009B836 /* ASLObjectDetector.mlmodel */; };
+		4F938FC723DBE1D50009B836 /* ASLObjectDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F938FC623DBE1D50009B836 /* ASLObjectDetectorViewController.swift */; };
+		4F938FC923DC8F140009B836 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F938FC823DC8F140009B836 /* EditProfileViewController.swift */; };
+		4FA55ABC23DB27080084185E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55ABB23DB27080084185E /* ActivityViewController.swift */; };
+		4FA55ABE23DB272D0084185E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55ABD23DB272D0084185E /* ActivityTableViewCell.swift */; };
+		4FA55AC023DB2CA30084185E /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA55ABF23DB2CA30084185E /* ActivityDetailViewController.swift */; };
+		4FA5BC0823F3D92E001E0A3E /* RealSignLangauge1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5BC0723F3D92D001E0A3E /* RealSignLangauge1.mlmodel */; };
+		4FA5BC0A23F4EA1C001E0A3E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5BC0923F4EA1C001E0A3E /* CameraViewController.swift */; };
+		4FA5BC0E23F57F32001E0A3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FA5BC0D23F57F32001E0A3E /* GoogleService-Info.plist */; };
+		4FB45D9E23EC4CF100A845F7 /* ASLObjectDetector5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FB45D9D23EC4CF100A845F7 /* ASLObjectDetector5.mlmodel */; };
 		4FC4899523AC8B7000FEF240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4899423AC8B7000FEF240 /* AppDelegate.swift */; };
 		4FC4899723AC8B7000FEF240 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4899623AC8B7000FEF240 /* SceneDelegate.swift */; };
 		4FC4899923AC8B7000FEF240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4899823AC8B7000FEF240 /* ViewController.swift */; };
 		4FC4899C23AC8B7000FEF240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC4899A23AC8B7000FEF240 /* Main.storyboard */; };
 		4FC4899F23AC8B7000FEF240 /* seniorProject62.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FC4899D23AC8B7000FEF240 /* seniorProject62.xcdatamodeld */; };
 		4FC489A123AC8B7300FEF240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC489A023AC8B7300FEF240 /* Assets.xcassets */; };
-		4FC489AC23AC8B9400FEF240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC489AB23AC8B9400FEF240 /* GoogleService-Info.plist */; };
 		4FC489AE23AC97A200FEF240 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC489AD23AC97A200FEF240 /* SigninViewController.swift */; };
 		4FC489B223AC980700FEF240 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC489B123AC980700FEF240 /* SpeechViewController.swift */; };
 		4FC489B423AC982700FEF240 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC489B323AC982700FEF240 /* ProfileViewController.swift */; };
@@ -38,24 +90,20 @@
 		4FC489DC23AD0EBD00FEF240 /* Mitr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC489D623AD0EBC00FEF240 /* Mitr-Bold.ttf */; };
 		4FC489DD23AD0EBD00FEF240 /* Mitr-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC489D723AD0EBD00FEF240 /* Mitr-Regular.ttf */; };
 		4FC489DE23AD0EBD00FEF240 /* Mitr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC489D823AD0EBD00FEF240 /* Mitr-Medium.ttf */; };
+		4FEEE26D23F1652200E28F8B /* NumberImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEE26C23F1652200E28F8B /* NumberImageClassifier.mlmodel */; };
+		4FF6B8CA23E3CCBE00DC1E9B /* ASLObjectDetectorTest2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6B8C923E3CCBE00DC1E9B /* ASLObjectDetectorTest2.mlmodel */; };
+		4FF6B8CC23E43B6100DC1E9B /* warning.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FF6B8CB23E43B6100DC1E9B /* warning.mov */; };
+		4FF6B8CE23E5044200DC1E9B /* ไหม.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FF6B8CD23E5044200DC1E9B /* ไหม.mov */; };
 		4FFE7C5423C1B2E700C76FC0 /* MaintabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5323C1B2E700C76FC0 /* MaintabbarViewController.swift */; };
 		4FFE7C6023C1C59000C76FC0 /* ครอบครัว.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5523C1C59000C76FC0 /* ครอบครัว.mov */; };
-		4FFE7C6123C1C59000C76FC0 /* สวัสดี.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5623C1C59000C76FC0 /* สวัสดี.mov */; };
 		4FFE7C6223C1C59000C76FC0 /* คนหูหนวก.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5723C1C59000C76FC0 /* คนหูหนวก.mov */; };
 		4FFE7C6323C1C59000C76FC0 /* พบกันใหม่.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5823C1C59000C76FC0 /* พบกันใหม่.mov */; };
 		4FFE7C6423C1C59000C76FC0 /* มีพี่น้องกี่คน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5923C1C59000C76FC0 /* มีพี่น้องกี่คน.mov */; };
 		4FFE7C6523C1C59000C76FC0 /* คนหูดี.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5A23C1C59000C76FC0 /* คนหูดี.mov */; };
 		4FFE7C6623C1C59000C76FC0 /* มา.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5B23C1C59000C76FC0 /* มา.mov */; };
-		4FFE7C6723C1C59000C76FC0 /* ลาก่อน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5C23C1C59000C76FC0 /* ลาก่อน.mov */; };
-		4FFE7C6823C1C59000C76FC0 /* ขอบคุณ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */; };
 		4FFE7C6923C1C59000C76FC0 /* ชื่อ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */; };
 		4FFE7C6A23C1C59000C76FC0 /* พบ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C5F23C1C59000C76FC0 /* พบ.mov */; };
 		4FFE7C6D23C3698C00C76FC0 /* WordCut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */; };
-		4FFE7C7323C74E7700C76FC0 /* เป็นอย่างไร.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */; };
-		4FFE7C7423C74E7700C76FC0 /* ฉัน.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */; };
-		4FFE7C7523C74E7700C76FC0 /* คุณ.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7023C74E7700C76FC0 /* คุณ.mov */; };
-		4FFE7C7623C74E7700C76FC0 /* วันนี้.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */; };
-		4FFE7C7723C74E7700C76FC0 /* สบายดีหรือเปล่า.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */; };
 		7F2E2FA2976394A1873AF7E8 /* Pods_seniorProject62.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1341797BEB2BD054666159 /* Pods_seniorProject62.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,14 +115,67 @@
 		4F0D925C23D0718500473CD9 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		4F1341797BEB2BD054666159 /* Pods_seniorProject62.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seniorProject62.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35DCB223BE19F0002056C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F3B2FFF23F6A9A400E0AB6E /* MyNameIsImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyNameIsImageClassifier.mlmodel; sourceTree = "<group>"; };
+		4F3B300123F6C6E800E0AB6E /* GuidelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelineViewController.swift; sourceTree = "<group>"; };
 		4F4478ED23C8D5AA00E80EE6 /* HandDetectMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDetectMLViewController.swift; sourceTree = "<group>"; };
-		4F4478F323C99F0200E80EE6 /* warning.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = warning.mov; sourceTree = "<group>"; };
 		4F4478F523CDC22F00E80EE6 /* ASLImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASLImageClassifier.mlmodel; path = ASLImageClassifier.mlproj/Models/ASLImageClassifier.mlmodel; sourceTree = "<group>"; };
 		4F4478F723CDE8AC00E80EE6 /* support.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = support.mov; sourceTree = "<group>"; };
+		4F5A1ABE24090337008D6987 /* ASLImageClassifierAE.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASLImageClassifierAE.mlmodel; path = ASLImageClassifier.mlproj/Models/ASLImageClassifierAE.mlmodel; sourceTree = "<group>"; };
+		4F6A5A6C23E2BC1500BBE1F8 /* ฉลาด.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฉลาด.mov"; sourceTree = "<group>"; };
+		4F6A5A6D23E2BC1700BBE1F8 /* ดูแลตัวเองด้วย.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ดูแลตัวเองด้วย.mov"; sourceTree = "<group>"; };
+		4F6A5A6E23E2BC1900BBE1F8 /* ขอบคุณ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณ.mov"; sourceTree = "<group>"; };
+		4F6A5A6F23E2BC1B00BBE1F8 /* สบายดี.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สบายดี.mov"; sourceTree = "<group>"; };
+		4F6A5A7023E2BC1C00BBE1F8 /* ไม่ว่าง.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไม่ว่าง.mov"; sourceTree = "<group>"; };
+		4F6A5A7123E2BC1E00BBE1F8 /* ขอโทษ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอโทษ.mov"; sourceTree = "<group>"; };
+		4F6A5A7223E2BC1F00BBE1F8 /* เก่ง.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เก่ง.mov"; sourceTree = "<group>"; };
+		4F6A5A7323E2BC2100BBE1F8 /* ใช่.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ใช่.mov"; sourceTree = "<group>"; };
+		4F6A5A7423E2BC2300BBE1F8 /* ฉัน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฉัน.mov"; sourceTree = "<group>"; };
+		4F6A5A7523E2BC2400BBE1F8 /* ขอโทษค่ะ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอโทษค่ะ.mov"; sourceTree = "<group>"; };
+		4F6A5A7623E2BC2600BBE1F8 /* เป็นห่วง.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เป็นห่วง.mov"; sourceTree = "<group>"; };
+		4F6A5A7723E2BC2800BBE1F8 /* ฝันดีนะ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฝันดีนะ.mov"; sourceTree = "<group>"; };
+		4F6A5A7823E2BC2900BBE1F8 /* ฉันชื่อ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฉันชื่อ.mov"; sourceTree = "<group>"; };
+		4F6A5A7923E2BC2B00BBE1F8 /* โชคดีนะ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "โชคดีนะ.mov"; sourceTree = "<group>"; };
+		4F6A5A7A23E2BC2C00BBE1F8 /* ไม่มีปัญหา.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไม่มีปัญหา.mov"; sourceTree = "<group>"; };
+		4F6A5A7B23E2BC2E00BBE1F8 /* ไม่ใช่.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไม่ใช่.mov"; sourceTree = "<group>"; };
+		4F6A5A7C23E2BC3000BBE1F8 /* ขอบคุณมาก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณมาก.mov"; sourceTree = "<group>"; };
+		4F6A5A7D23E2BC3200BBE1F8 /* สวย.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สวย.mov"; sourceTree = "<group>"; };
+		4F6A5A7E23E2BC3300BBE1F8 /* โอเค.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "โอเค.mov"; sourceTree = "<group>"; };
+		4F6A5A7F23E2BC3500BBE1F8 /* ว่างไหม.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ว่างไหม.mov"; sourceTree = "<group>"; };
+		4F6A5A8023E2BC3600BBE1F8 /* เยี่ยมมาก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เยี่ยมมาก.mov"; sourceTree = "<group>"; };
+		4F6A5A8123E2BC3800BBE1F8 /* ทำท่ามือช้าๆหน่อย.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ทำท่ามือช้าๆหน่อย.mov"; sourceTree = "<group>"; };
+		4F6A5A8223E2BC3A00BBE1F8 /* น่ารัก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "น่ารัก.mov"; sourceTree = "<group>"; };
+		4F6A5A8323E2BC3B00BBE1F8 /* ขอบคุณค่ะ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณค่ะ.mov"; sourceTree = "<group>"; };
+		4F6A5A8423E2BC3D00BBE1F8 /* ไม่เข้าใจ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไม่เข้าใจ.mov"; sourceTree = "<group>"; };
+		4F6A5A8523E2BC3E00BBE1F8 /* ผิด.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ผิด.mov"; sourceTree = "<group>"; };
+		4F6A5A8623E2BC4000BBE1F8 /* เช่นกัน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เช่นกัน.mov"; sourceTree = "<group>"; };
+		4F6A5A8723E2BC4200BBE1F8 /* สวัสดี.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สวัสดี.mov"; sourceTree = "<group>"; };
+		4F6A5A8823E2BC4300BBE1F8 /* สบายดีไหม.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สบายดีไหม.mov"; sourceTree = "<group>"; };
+		4F6A5A8923E2BC4500BBE1F8 /* เข้าใจแล้ว.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เข้าใจแล้ว.mov"; sourceTree = "<group>"; };
+		4F6A5A8A23E2BC4600BBE1F8 /* ยินดีที่ได้รู้จัก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ยินดีที่ได้รู้จัก.mov"; sourceTree = "<group>"; };
+		4F6A5A8B23E2BC4800BBE1F8 /* สวัสดีจ้า.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สวัสดีจ้า.mov"; sourceTree = "<group>"; };
+		4F6A5A8C23E2BC4A00BBE1F8 /* ถูก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ถูก.mov"; sourceTree = "<group>"; };
+		4F6A5A8D23E2BC4B00BBE1F8 /* ไม่เป็นไร.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไม่เป็นไร.mov"; sourceTree = "<group>"; };
+		4F6A5A8E23E2BC4D00BBE1F8 /* ทำอะไรอยู่.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ทำอะไรอยู่.mov"; sourceTree = "<group>"; };
+		4F6A5A8F23E2BC4E00BBE1F8 /* ยินดีที่ได้รู้จักเช่นกัน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ยินดีที่ได้รู้จักเช่นกัน.mov"; sourceTree = "<group>"; };
+		4F6A5A9023E2BC5000BBE1F8 /* ลาก่อน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ลาก่อน.mov"; sourceTree = "<group>"; };
+		4F6A5A9123E2BC5200BBE1F8 /* แล้วคุณล่ะ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "แล้วคุณล่ะ.mov"; sourceTree = "<group>"; };
+		4F6A5A9223E2BC5300BBE1F8 /* ว่าง.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ว่าง.mov"; sourceTree = "<group>"; };
 		4F715E5623B5BAB400FE8CDE /* seniorProject62.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = seniorProject62.entitlements; sourceTree = "<group>"; };
 		4F715E5923B62B4C00FE8CDE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4F715E5B23B704D400FE8CDE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		4F715E5D23B71EDC00FE8CDE /* ขอบคุณมาก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณมาก.mov"; sourceTree = "<group>"; };
+		4F82F700240D071D00630684 /* ASLImageClassifierAZ70.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASLImageClassifierAZ70.mlmodel; path = ASLImageClassifier.mlproj/Models/ASLImageClassifierAZ70.mlmodel; sourceTree = "<group>"; };
+		4F82F702240D147200630684 /* ASLImageClassifierAE30.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ASLImageClassifierAE30.mlmodel; path = ASLImageClassifier.mlproj/Models/ASLImageClassifierAE30.mlmodel; sourceTree = "<group>"; };
+		4F913AB5240A69210093DDFF /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F938FC423DBE0380009B836 /* ASLObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLObjectDetector.mlmodel; sourceTree = "<group>"; };
+		4F938FC623DBE1D50009B836 /* ASLObjectDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLObjectDetectorViewController.swift; sourceTree = "<group>"; };
+		4F938FC823DC8F140009B836 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		4FA55ABB23DB27080084185E /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		4FA55ABD23DB272D0084185E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		4FA55ABF23DB2CA30084185E /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		4FA5BC0723F3D92D001E0A3E /* RealSignLangauge1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RealSignLangauge1.mlmodel; sourceTree = "<group>"; };
+		4FA5BC0923F4EA1C001E0A3E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4FA5BC0D23F57F32001E0A3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FB45D9D23EC4CF100A845F7 /* ASLObjectDetector5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLObjectDetector5.mlmodel; sourceTree = "<group>"; };
 		4FC4899123AC8B7000FEF240 /* seniorProject62.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seniorProject62.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC4899423AC8B7000FEF240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC4899623AC8B7000FEF240 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +184,6 @@
 		4FC4899E23AC8B7000FEF240 /* seniorProject62.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = seniorProject62.xcdatamodel; sourceTree = "<group>"; };
 		4FC489A023AC8B7300FEF240 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FC489A523AC8B7300FEF240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FC489AB23AC8B9400FEF240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FC489AD23AC97A200FEF240 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		4FC489B123AC980700FEF240 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		4FC489B323AC982700FEF240 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -96,24 +196,20 @@
 		4FC489D623AD0EBC00FEF240 /* Mitr-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Bold.ttf"; sourceTree = "<group>"; };
 		4FC489D723AD0EBD00FEF240 /* Mitr-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Regular.ttf"; sourceTree = "<group>"; };
 		4FC489D823AD0EBD00FEF240 /* Mitr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Medium.ttf"; sourceTree = "<group>"; };
+		4FEEE26C23F1652200E28F8B /* NumberImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NumberImageClassifier.mlmodel; sourceTree = "<group>"; };
+		4FF6B8C923E3CCBE00DC1E9B /* ASLObjectDetectorTest2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLObjectDetectorTest2.mlmodel; sourceTree = "<group>"; };
+		4FF6B8CB23E43B6100DC1E9B /* warning.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = warning.mov; sourceTree = "<group>"; };
+		4FF6B8CD23E5044200DC1E9B /* ไหม.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ไหม.mov"; sourceTree = "<group>"; };
 		4FFE7C5323C1B2E700C76FC0 /* MaintabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintabbarViewController.swift; sourceTree = "<group>"; };
 		4FFE7C5523C1C59000C76FC0 /* ครอบครัว.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ครอบครัว.mov"; sourceTree = "<group>"; };
-		4FFE7C5623C1C59000C76FC0 /* สวัสดี.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สวัสดี.mov"; sourceTree = "<group>"; };
 		4FFE7C5723C1C59000C76FC0 /* คนหูหนวก.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "คนหูหนวก.mov"; sourceTree = "<group>"; };
 		4FFE7C5823C1C59000C76FC0 /* พบกันใหม่.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "พบกันใหม่.mov"; sourceTree = "<group>"; };
 		4FFE7C5923C1C59000C76FC0 /* มีพี่น้องกี่คน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "มีพี่น้องกี่คน.mov"; sourceTree = "<group>"; };
 		4FFE7C5A23C1C59000C76FC0 /* คนหูดี.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "คนหูดี.mov"; sourceTree = "<group>"; };
 		4FFE7C5B23C1C59000C76FC0 /* มา.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "มา.mov"; sourceTree = "<group>"; };
-		4FFE7C5C23C1C59000C76FC0 /* ลาก่อน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ลาก่อน.mov"; sourceTree = "<group>"; };
-		4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ขอบคุณ.mov"; sourceTree = "<group>"; };
 		4FFE7C5E23C1C59000C76FC0 /* ชื่อ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ชื่อ.mov"; sourceTree = "<group>"; };
 		4FFE7C5F23C1C59000C76FC0 /* พบ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "พบ.mov"; sourceTree = "<group>"; };
 		4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCut.swift; sourceTree = "<group>"; };
-		4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "เป็นอย่างไร.mov"; sourceTree = "<group>"; };
-		4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "ฉัน.mov"; sourceTree = "<group>"; };
-		4FFE7C7023C74E7700C76FC0 /* คุณ.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "คุณ.mov"; sourceTree = "<group>"; };
-		4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "วันนี้.mov"; sourceTree = "<group>"; };
-		4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "สบายดีหรือเปล่า.mov"; sourceTree = "<group>"; };
 		9C76333F220AA7520F0EFAD6 /* Pods-seniorProject62.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorProject62.release.xcconfig"; path = "Target Support Files/Pods-seniorProject62/Pods-seniorProject62.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,14 +249,21 @@
 		4FC4899323AC8B7000FEF240 /* seniorProject62 */ = {
 			isa = PBXGroup;
 			children = (
+				4F82F702240D147200630684 /* ASLImageClassifierAE30.mlmodel */,
+				4F82F700240D071D00630684 /* ASLImageClassifierAZ70.mlmodel */,
+				4F3B2FFF23F6A9A400E0AB6E /* MyNameIsImageClassifier.mlmodel */,
 				4F4478F523CDC22F00E80EE6 /* ASLImageClassifier.mlmodel */,
+				4FA5BC0723F3D92D001E0A3E /* RealSignLangauge1.mlmodel */,
+				4FEEE26C23F1652200E28F8B /* NumberImageClassifier.mlmodel */,
+				4F938FC423DBE0380009B836 /* ASLObjectDetector.mlmodel */,
+				4FF6B8C923E3CCBE00DC1E9B /* ASLObjectDetectorTest2.mlmodel */,
+				4FB45D9D23EC4CF100A845F7 /* ASLObjectDetector5.mlmodel */,
+				4F5A1ABE24090337008D6987 /* ASLImageClassifierAE.mlmodel */,
 				4F35DCB123BE19F0002056C3 /* LaunchScreen.storyboard */,
 				4FC4899A23AC8B7000FEF240 /* Main.storyboard */,
-				4F0D925423CF9D0200473CD9 /* PauseAnimation.swift */,
-				4F0D925C23D0718500473CD9 /* Gif.swift */,
 				4FC489A023AC8B7300FEF240 /* Assets.xcassets */,
 				4F4478ED23C8D5AA00E80EE6 /* HandDetectMLViewController.swift */,
-				4FC489C323ACE93000FEF240 /* Constants.swift */,
+				4F938FC623DBE1D50009B836 /* ASLObjectDetectorViewController.swift */,
 				4FC4899423AC8B7000FEF240 /* AppDelegate.swift */,
 				4FC4899623AC8B7000FEF240 /* SceneDelegate.swift */,
 				4FC4899823AC8B7000FEF240 /* ViewController.swift */,
@@ -168,14 +271,21 @@
 				4FC489BD23ACB64F00FEF240 /* SignupViewController.swift */,
 				4FC489AD23AC97A200FEF240 /* SigninViewController.swift */,
 				4FFE7C5323C1B2E700C76FC0 /* MaintabbarViewController.swift */,
-				4FC489B323AC982700FEF240 /* ProfileViewController.swift */,
 				4FC489B123AC980700FEF240 /* SpeechViewController.swift */,
 				4F715E5923B62B4C00FE8CDE /* OnboardingViewController.swift */,
 				4FC489C123ACE8B900FEF240 /* WelcomeViewController.swift */,
-				4FC489AB23AC8B9400FEF240 /* GoogleService-Info.plist */,
 				4FC489A523AC8B7300FEF240 /* Info.plist */,
 				4F715E5623B5BAB400FE8CDE /* seniorProject62.entitlements */,
 				4FC4899D23AC8B7000FEF240 /* seniorProject62.xcdatamodeld */,
+				4FA55ABB23DB27080084185E /* ActivityViewController.swift */,
+				4FA55ABD23DB272D0084185E /* ActivityTableViewCell.swift */,
+				4FA55ABF23DB2CA30084185E /* ActivityDetailViewController.swift */,
+				4FC489B323AC982700FEF240 /* ProfileViewController.swift */,
+				4F938FC823DC8F140009B836 /* EditProfileViewController.swift */,
+				4FA5BC0923F4EA1C001E0A3E /* CameraViewController.swift */,
+				4FA5BC0D23F57F32001E0A3E /* GoogleService-Info.plist */,
+				4F3B300123F6C6E800E0AB6E /* GuidelineViewController.swift */,
+				4F913AB5240A69210093DDFF /* ImageCollectionViewCell.swift */,
 			);
 			path = seniorProject62;
 			sourceTree = "<group>";
@@ -196,15 +306,49 @@
 		4FC489DF23AD133100FEF240 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				4F6A5A7223E2BC1F00BBE1F8 /* เก่ง.mov */,
+				4F6A5A7123E2BC1E00BBE1F8 /* ขอโทษ.mov */,
+				4F6A5A7523E2BC2400BBE1F8 /* ขอโทษค่ะ.mov */,
+				4F6A5A6E23E2BC1900BBE1F8 /* ขอบคุณ.mov */,
+				4F6A5A8323E2BC3B00BBE1F8 /* ขอบคุณค่ะ.mov */,
+				4F6A5A7C23E2BC3000BBE1F8 /* ขอบคุณมาก.mov */,
+				4F6A5A8923E2BC4500BBE1F8 /* เข้าใจแล้ว.mov */,
+				4F6A5A6C23E2BC1500BBE1F8 /* ฉลาด.mov */,
+				4F6A5A7423E2BC2300BBE1F8 /* ฉัน.mov */,
+				4F6A5A7823E2BC2900BBE1F8 /* ฉันชื่อ.mov */,
+				4F6A5A8623E2BC4000BBE1F8 /* เช่นกัน.mov */,
+				4F6A5A7923E2BC2B00BBE1F8 /* โชคดีนะ.mov */,
+				4F6A5A7323E2BC2100BBE1F8 /* ใช่.mov */,
+				4F6A5A6D23E2BC1700BBE1F8 /* ดูแลตัวเองด้วย.mov */,
+				4F6A5A8C23E2BC4A00BBE1F8 /* ถูก.mov */,
+				4F6A5A8123E2BC3800BBE1F8 /* ทำท่ามือช้าๆหน่อย.mov */,
+				4F6A5A8E23E2BC4D00BBE1F8 /* ทำอะไรอยู่.mov */,
+				4F6A5A8223E2BC3A00BBE1F8 /* น่ารัก.mov */,
+				4F6A5A7623E2BC2600BBE1F8 /* เป็นห่วง.mov */,
+				4F6A5A8523E2BC3E00BBE1F8 /* ผิด.mov */,
+				4F6A5A7723E2BC2800BBE1F8 /* ฝันดีนะ.mov */,
+				4F6A5A8423E2BC3D00BBE1F8 /* ไม่เข้าใจ.mov */,
+				4F6A5A7B23E2BC2E00BBE1F8 /* ไม่ใช่.mov */,
+				4F6A5A8D23E2BC4B00BBE1F8 /* ไม่เป็นไร.mov */,
+				4F6A5A7A23E2BC2C00BBE1F8 /* ไม่มีปัญหา.mov */,
+				4F6A5A7023E2BC1C00BBE1F8 /* ไม่ว่าง.mov */,
+				4F6A5A8A23E2BC4600BBE1F8 /* ยินดีที่ได้รู้จัก.mov */,
+				4F6A5A8F23E2BC4E00BBE1F8 /* ยินดีที่ได้รู้จักเช่นกัน.mov */,
+				4F6A5A8023E2BC3600BBE1F8 /* เยี่ยมมาก.mov */,
+				4F6A5A9023E2BC5000BBE1F8 /* ลาก่อน.mov */,
+				4F6A5A9123E2BC5200BBE1F8 /* แล้วคุณล่ะ.mov */,
+				4F6A5A9223E2BC5300BBE1F8 /* ว่าง.mov */,
+				4FF6B8CD23E5044200DC1E9B /* ไหม.mov */,
+				4F6A5A7F23E2BC3500BBE1F8 /* ว่างไหม.mov */,
+				4F6A5A6F23E2BC1B00BBE1F8 /* สบายดี.mov */,
+				4F6A5A8823E2BC4300BBE1F8 /* สบายดีไหม.mov */,
+				4F6A5A7D23E2BC3200BBE1F8 /* สวย.mov */,
+				4F6A5A8723E2BC4200BBE1F8 /* สวัสดี.mov */,
+				4F6A5A8B23E2BC4800BBE1F8 /* สวัสดีจ้า.mov */,
+				4F6A5A7E23E2BC3300BBE1F8 /* โอเค.mov */,
 				4F0D925623D0393400473CD9 /* loading.gif */,
+				4FF6B8CB23E43B6100DC1E9B /* warning.mov */,
 				4F4478F723CDE8AC00E80EE6 /* support.mov */,
-				4F4478F323C99F0200E80EE6 /* warning.mov */,
-				4FFE7C7023C74E7700C76FC0 /* คุณ.mov */,
-				4FFE7C6F23C74E7700C76FC0 /* ฉัน.mov */,
-				4FFE7C6E23C74E7600C76FC0 /* เป็นอย่างไร.mov */,
-				4FFE7C7123C74E7700C76FC0 /* วันนี้.mov */,
-				4FFE7C7223C74E7700C76FC0 /* สบายดีหรือเปล่า.mov */,
-				4FFE7C5D23C1C59000C76FC0 /* ขอบคุณ.mov */,
 				4FFE7C5A23C1C59000C76FC0 /* คนหูดี.mov */,
 				4FFE7C5723C1C59000C76FC0 /* คนหูหนวก.mov */,
 				4FFE7C5523C1C59000C76FC0 /* ครอบครัว.mov */,
@@ -213,9 +357,6 @@
 				4FFE7C5823C1C59000C76FC0 /* พบกันใหม่.mov */,
 				4FFE7C5B23C1C59000C76FC0 /* มา.mov */,
 				4FFE7C5923C1C59000C76FC0 /* มีพี่น้องกี่คน.mov */,
-				4FFE7C5C23C1C59000C76FC0 /* ลาก่อน.mov */,
-				4FFE7C5623C1C59000C76FC0 /* สวัสดี.mov */,
-				4F715E5D23B71EDC00FE8CDE /* ขอบคุณมาก.mov */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -225,6 +366,9 @@
 			children = (
 				4FFE7C6C23C3698C00C76FC0 /* WordCut.swift */,
 				4F09F82F23D450BF00FAA1FE /* HandToThai.swift */,
+				4FC489C323ACE93000FEF240 /* Constants.swift */,
+				4F0D925C23D0718500473CD9 /* Gif.swift */,
+				4F0D925423CF9D0200473CD9 /* PauseAnimation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,35 +450,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6A5AB323E2BC5300BBE1F8 /* ถูก.mov in Resources */,
 				4FC489DB23AD0EBD00FEF240 /* Mitr-Light.ttf in Resources */,
-				4FC489AC23AC8B9400FEF240 /* GoogleService-Info.plist in Resources */,
-				4FFE7C7623C74E7700C76FC0 /* วันนี้.mov in Resources */,
-				4FFE7C6823C1C59000C76FC0 /* ขอบคุณ.mov in Resources */,
+				4F6A5AB823E2BC5300BBE1F8 /* แล้วคุณล่ะ.mov in Resources */,
+				4F6A5AAD23E2BC5300BBE1F8 /* เช่นกัน.mov in Resources */,
+				4F6A5A9B23E2BC5300BBE1F8 /* ฉัน.mov in Resources */,
+				4F6A5A9823E2BC5300BBE1F8 /* ขอโทษ.mov in Resources */,
+				4F6A5AB423E2BC5300BBE1F8 /* ไม่เป็นไร.mov in Resources */,
+				4F6A5A9623E2BC5300BBE1F8 /* สบายดี.mov in Resources */,
+				4F6A5AA423E2BC5300BBE1F8 /* สวย.mov in Resources */,
 				4FC489DE23AD0EBD00FEF240 /* Mitr-Medium.ttf in Resources */,
-				4F715E5E23B71EDC00FE8CDE /* ขอบคุณมาก.mov in Resources */,
 				4FFE7C6423C1C59000C76FC0 /* มีพี่น้องกี่คน.mov in Resources */,
+				4F6A5AAC23E2BC5300BBE1F8 /* ผิด.mov in Resources */,
+				4F6A5AB123E2BC5300BBE1F8 /* ยินดีที่ได้รู้จัก.mov in Resources */,
+				4F6A5AA823E2BC5300BBE1F8 /* ทำท่ามือช้าๆหน่อย.mov in Resources */,
+				4F6A5AAA23E2BC5300BBE1F8 /* ขอบคุณค่ะ.mov in Resources */,
+				4F6A5AA523E2BC5300BBE1F8 /* โอเค.mov in Resources */,
 				4FFE7C6623C1C59000C76FC0 /* มา.mov in Resources */,
 				4FFE7C6523C1C59000C76FC0 /* คนหูดี.mov in Resources */,
 				4FC489DC23AD0EBD00FEF240 /* Mitr-Bold.ttf in Resources */,
-				4FFE7C6123C1C59000C76FC0 /* สวัสดี.mov in Resources */,
-				4FFE7C6723C1C59000C76FC0 /* ลาก่อน.mov in Resources */,
+				4FF6B8CE23E5044200DC1E9B /* ไหม.mov in Resources */,
+				4F6A5A9C23E2BC5300BBE1F8 /* ขอโทษค่ะ.mov in Resources */,
+				4F6A5AA223E2BC5300BBE1F8 /* ไม่ใช่.mov in Resources */,
+				4F6A5AA923E2BC5300BBE1F8 /* น่ารัก.mov in Resources */,
+				4F6A5A9E23E2BC5300BBE1F8 /* ฝันดีนะ.mov in Resources */,
 				4FC489DA23AD0EBD00FEF240 /* Mitr-ExtraLight.ttf in Resources */,
+				4F6A5A9D23E2BC5300BBE1F8 /* เป็นห่วง.mov in Resources */,
 				4FFE7C6923C1C59000C76FC0 /* ชื่อ.mov in Resources */,
-				4FFE7C7723C74E7700C76FC0 /* สบายดีหรือเปล่า.mov in Resources */,
-				4FFE7C7523C74E7700C76FC0 /* คุณ.mov in Resources */,
-				4FFE7C7323C74E7700C76FC0 /* เป็นอย่างไร.mov in Resources */,
-				4F4478F423C99F0200E80EE6 /* warning.mov in Resources */,
+				4F6A5A9423E2BC5300BBE1F8 /* ดูแลตัวเองด้วย.mov in Resources */,
 				4FC489D923AD0EBD00FEF240 /* Mitr-SemiBold.ttf in Resources */,
+				4F6A5AB923E2BC5300BBE1F8 /* ว่าง.mov in Resources */,
+				4F6A5AB523E2BC5300BBE1F8 /* ทำอะไรอยู่.mov in Resources */,
 				4FC489A123AC8B7300FEF240 /* Assets.xcassets in Resources */,
+				4F6A5A9523E2BC5300BBE1F8 /* ขอบคุณ.mov in Resources */,
+				4F6A5AAE23E2BC5300BBE1F8 /* สวัสดี.mov in Resources */,
+				4F6A5AA323E2BC5300BBE1F8 /* ขอบคุณมาก.mov in Resources */,
 				4F35DCB323BE19F0002056C3 /* LaunchScreen.storyboard in Resources */,
+				4F6A5AA123E2BC5300BBE1F8 /* ไม่มีปัญหา.mov in Resources */,
 				4FFE7C6023C1C59000C76FC0 /* ครอบครัว.mov in Resources */,
-				4FFE7C7423C74E7700C76FC0 /* ฉัน.mov in Resources */,
+				4F6A5AB223E2BC5300BBE1F8 /* สวัสดีจ้า.mov in Resources */,
+				4F6A5A9323E2BC5300BBE1F8 /* ฉลาด.mov in Resources */,
+				4F6A5A9F23E2BC5300BBE1F8 /* ฉันชื่อ.mov in Resources */,
 				4FC489DD23AD0EBD00FEF240 /* Mitr-Regular.ttf in Resources */,
+				4F6A5AB723E2BC5300BBE1F8 /* ลาก่อน.mov in Resources */,
+				4F6A5A9923E2BC5300BBE1F8 /* เก่ง.mov in Resources */,
 				4FC4899C23AC8B7000FEF240 /* Main.storyboard in Resources */,
+				4FF6B8CC23E43B6100DC1E9B /* warning.mov in Resources */,
+				4F6A5AB623E2BC5300BBE1F8 /* ยินดีที่ได้รู้จักเช่นกัน.mov in Resources */,
 				4F4478F823CDE8AC00E80EE6 /* support.mov in Resources */,
+				4F6A5AA723E2BC5300BBE1F8 /* เยี่ยมมาก.mov in Resources */,
+				4F6A5AAB23E2BC5300BBE1F8 /* ไม่เข้าใจ.mov in Resources */,
 				4FFE7C6323C1C59000C76FC0 /* พบกันใหม่.mov in Resources */,
+				4F6A5AAF23E2BC5300BBE1F8 /* สบายดีไหม.mov in Resources */,
 				4F0D925723D0393400473CD9 /* loading.gif in Resources */,
+				4F6A5AA023E2BC5300BBE1F8 /* โชคดีนะ.mov in Resources */,
+				4F6A5AA623E2BC5300BBE1F8 /* ว่างไหม.mov in Resources */,
+				4FA5BC0E23F57F32001E0A3E /* GoogleService-Info.plist in Resources */,
+				4F6A5A9A23E2BC5300BBE1F8 /* ใช่.mov in Resources */,
+				4F6A5AB023E2BC5300BBE1F8 /* เข้าใจแล้ว.mov in Resources */,
 				4FFE7C6A23C1C59000C76FC0 /* พบ.mov in Resources */,
+				4F6A5A9723E2BC5300BBE1F8 /* ไม่ว่าง.mov in Resources */,
 				4FFE7C6223C1C59000C76FC0 /* คนหูหนวก.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,24 +563,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F913AB6240A69210093DDFF /* ImageCollectionViewCell.swift in Sources */,
+				4F938FC723DBE1D50009B836 /* ASLObjectDetectorViewController.swift in Sources */,
+				4FF6B8CA23E3CCBE00DC1E9B /* ASLObjectDetectorTest2.mlmodel in Sources */,
+				4F3B300023F6A9A400E0AB6E /* MyNameIsImageClassifier.mlmodel in Sources */,
+				4FA55AC023DB2CA30084185E /* ActivityDetailViewController.swift in Sources */,
 				4FC489C223ACE8B900FEF240 /* WelcomeViewController.swift in Sources */,
 				4FC4899923AC8B7000FEF240 /* ViewController.swift in Sources */,
+				4F938FC523DBE0380009B836 /* ASLObjectDetector.mlmodel in Sources */,
 				4FFE7C6D23C3698C00C76FC0 /* WordCut.swift in Sources */,
+				4FA55ABC23DB27080084185E /* ActivityViewController.swift in Sources */,
 				4FC489B223AC980700FEF240 /* SpeechViewController.swift in Sources */,
 				4FC489BE23ACB64F00FEF240 /* SignupViewController.swift in Sources */,
 				4F4478EE23C8D5AA00E80EE6 /* HandDetectMLViewController.swift in Sources */,
 				4FC489AE23AC97A200FEF240 /* SigninViewController.swift in Sources */,
+				4FEEE26D23F1652200E28F8B /* NumberImageClassifier.mlmodel in Sources */,
 				4F09F83023D450BF00FAA1FE /* HandToThai.swift in Sources */,
 				4FFE7C5423C1B2E700C76FC0 /* MaintabbarViewController.swift in Sources */,
+				4FA5BC0A23F4EA1C001E0A3E /* CameraViewController.swift in Sources */,
+				4F82F701240D071D00630684 /* ASLImageClassifierAZ70.mlmodel in Sources */,
+				4F82F703240D147200630684 /* ASLImageClassifierAE30.mlmodel in Sources */,
 				4F0D925D23D0718500473CD9 /* Gif.swift in Sources */,
+				4FA55ABE23DB272D0084185E /* ActivityTableViewCell.swift in Sources */,
 				4FC489C423ACE93000FEF240 /* Constants.swift in Sources */,
+				4FA5BC0823F3D92E001E0A3E /* RealSignLangauge1.mlmodel in Sources */,
 				4FC4899523AC8B7000FEF240 /* AppDelegate.swift in Sources */,
 				4F4478F623CDC22F00E80EE6 /* ASLImageClassifier.mlmodel in Sources */,
 				4F0D925523CF9D0200473CD9 /* PauseAnimation.swift in Sources */,
+				4F5A1ABF24090337008D6987 /* ASLImageClassifierAE.mlmodel in Sources */,
 				4F715E5A23B62B4C00FE8CDE /* OnboardingViewController.swift in Sources */,
+				4F3B300223F6C6E800E0AB6E /* GuidelineViewController.swift in Sources */,
+				4FB45D9E23EC4CF100A845F7 /* ASLObjectDetector5.mlmodel in Sources */,
 				4F715E5C23B704D400FE8CDE /* SearchViewController.swift in Sources */,
 				4FC4899723AC8B7000FEF240 /* SceneDelegate.swift in Sources */,
 				4FC489B423AC982700FEF240 /* ProfileViewController.swift in Sources */,
+				4F938FC923DC8F140009B836 /* EditProfileViewController.swift in Sources */,
 				4FC4899F23AC8B7000FEF240 /* seniorProject62.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,6 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = seniorProject62/seniorProject62.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69TQYE92;
 				INFOPLIST_FILE = seniorProject62/Info.plist;
@@ -561,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.praewey.seniorProject62;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -572,6 +766,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = seniorProject62/seniorProject62.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69TQYE92;
 				INFOPLIST_FILE = seniorProject62/Info.plist;
@@ -581,6 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.praewey.seniorProject62;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
